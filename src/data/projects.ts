@@ -24,7 +24,7 @@ export const PROJECTS: Project[] = [
     shortDescription: "Dynamic 3D Raycasting Game Engine in C inspired by Wolfenstein 3D, featuring DDA ray casting, real-time texture mapping, and collision physics.",
     description: "CUB3D is a graphics engine constructed from scratch in C using raycasting techniques reminiscent of classic early 90s FPS games like Wolfenstein 3D. The engine projects 2D grid maps into a pseudo-3D perspective in real time using the DDA (Digital Differential Analysis) algorithm for ray-wall intersections, texture mapping, directional lighting, sprite handling, and precise collision detection.",
     technologies: ["C", "Raycasting", "DDA Algorithm", "MiniLibX", "Graphics Programming", "Game Engine", "Texture Mapping"],
-    image: "",
+    image: "/images/cub3d.jpg",
     githubUrl: "https://github.com/mrfoxGN/CUB3D-AGN-NTHD",
     features: [
       "Real-time 2D-to-3D raycasting software engine",
@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
     shortDescription: "Autonomous, memory-enabled AI Non-Player Characters powered by Mistral LLMs, LangGraph state orchestration, and 3D web environments.",
     description: "Developed during the Mistral AI Hackathon, this project builds autonomous AI NPCs capable of persistent memory, emotional state tracking, long-term contextual dialogue, and goal-driven action decision trees inside interactive 3D browser environments. Powered by Mistral's state-of-the-art open models and LangGraph state orchestration.",
     technologies: ["Mistral AI", "LangGraph", "LangChain", "FastAPI", "Python", "React", "Three.js", "Vector DB"],
-    image: "",
+    image: "/images/npcs_mistral.jpg",
     githubUrl: "https://github.com/ABNmmd/NPCs-MistarlAI-Hackathon",
     features: [
       "Autonomous decision-making loops for interactive game entities",
@@ -75,7 +75,7 @@ export const PROJECTS: Project[] = [
     shortDescription: "Comprehensive mastery suite of Object-Oriented Programming, C++ standards, template metaprogramming, and STL container abstractions.",
     description: "An extensive series of rigorous C++ modules exploring Object-Oriented Programming (OOP), explicit memory control, Orthodox Canonical Form, inheritance hierarchies, runtime polymorphism, subtype polymorphism, custom operator overloading, exception safety guarantees, templates, and full utilization of the Standard Template Library (STL).",
     technologies: ["C++", "OOP", "Templates", "STL", "Polymorphism", "Memory Management", "RAII", "Exception Handling"],
-    image: "",
+    image: "/images/cpp_modules.jpg",
     githubUrl: "https://github.com/MAROKI01/CPP-Modules",
     features: [
       "Orthodox Canonical Class Forms (Default constructor, Copy constructor, Copy assignment, Destructor)",
@@ -100,7 +100,7 @@ export const PROJECTS: Project[] = [
     shortDescription: "Computer vision pipeline for facial detection, deep embedding extraction, and sub-millisecond multi-video similarity search.",
     description: "Video Face Search is an intelligent computer vision engine designed to index face embeddings across large video repositories. Utilizing deep learning face detection algorithms (MTCNN/RetinaFace) and facial recognition embeddings (FaceNet/ArcFace), the platform enables users to search for specific individuals across hours of raw video footage in milliseconds.",
     technologies: ["Python", "OpenCV", "PyTorch", "FaceNet", "RetinaFace", "FAISS", "NumPy", "FFmpeg"],
-    image: "",
+    image: "/images/video_face_search.jpg",
     githubUrl: "https://github.com/MAROKI01/Video-face-search",
     features: [
       "Automated keyframe video extraction and face detection pipeline",
@@ -125,7 +125,7 @@ export const PROJECTS: Project[] = [
     shortDescription: "Fully compliant RFC 1459 Internet Relay Chat (IRC) server written in C++ using non-blocking socket I/O multiplexing.",
     description: "A robust, multi-client Internet Relay Chat (IRC) server built from scratch in C++. The server complies with RFC 1459 protocols, supporting real-time messaging, private channels, operator privileges, mode management, topic management, invite controls, and bot integration—all powered by single-threaded non-blocking socket multiplexing via poll().",
     technologies: ["C++", "TCP/IP Sockets", "Non-blocking I/O", "poll() / select()", "IRC Protocol", "Network Programming"],
-    image: "",
+    image: "/images/irc_server.jpg",
     githubUrl: "https://github.com/mrfoxGN/IRC",
     features: [
       "Single-threaded non-blocking I/O socket event loops with poll() multiplexing",
@@ -151,7 +151,7 @@ export const PROJECTS: Project[] = [
     shortDescription: "Full-stack productivity application featuring habit streak tracking, statistical visualization heatmaps, and customizable routines.",
     description: "A modern, data-driven daily habit tracking platform designed to help users build consistency and monitor productivity routines. Features interactive calendar heatmaps, streak analytics, target notifications, and customizable habit categories backed by secure authentication and persistent cloud storage.",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "Express", "Database", "REST API"],
-    image: "",
+    image: "/images/daily_habit.jpg",
     githubUrl: "https://github.com/MAROKI01/Daily-Habit-Tracker",
     features: [
       "Interactive streak calculation algorithms with timezone compensation",
@@ -176,7 +176,7 @@ export const PROJECTS: Project[] = [
     shortDescription: "Real-time multiplayer Pong gaming platform with WebSockets, 3D graphics, OAuth2 2FA authentication, live chat, and microservices.",
     description: "Transcendence is the ultimate full-stack web application capstone. It combines a real-time multiplayer 3D Pong game, 2FA/OAuth2 authentication, real-time WebSocket chat rooms, matchmaking queues, match history dashboards, user profiles, and microservices deployment inside Docker containers.",
     technologies: ["TypeScript", "React", "Node.js", "WebSockets", "Three.js", "Docker", "PostgreSQL", "OAuth2 / 2FA"],
-    image: "",
+    image: "/images/transcendence.jpg",
     githubUrl: "https://github.com/KhaledHihi/Transcendence-",
     features: [
       "Real-time 3D multiplayer gameplay rendered in Three.js",
@@ -202,7 +202,7 @@ export const PROJECTS: Project[] = [
     shortDescription: "Concurrent threading and process synchronization solution to Dijkstra's classic Dining Philosophers problem in C.",
     description: "An exploration of concurrent computing, POSIX threads, processes, mutexes, and semaphores solving Dijkstra's famous Dining Philosophers problem. The system manages threads sharing limited resources (forks) without encountering deadlocks, starvation, or race conditions under strict microsecond timing constraints.",
     technologies: ["C", "POSIX Threads (pthreads)", "Mutexes", "Semaphores", "Concurrency", "Shared Memory", "Synchronization"],
-    image: "",
+    image: "/images/philosophers.jpg",
     githubUrl: "https://github.com/MAROKI01/Philosophers",
     features: [
       "Thread-per-philosopher concurrent execution architecture",
@@ -227,7 +227,7 @@ export const PROJECTS: Project[] = [
     shortDescription: "Custom Unix command-line shell implementation in C featuring command execution pipelines, redirections, AST parsing, and signal handlers.",
     description: "Minishell is an authentic Unix shell built from scratch in C. It replicates core Bash functionalities including prompt display, history, command parsing, environment variable expansion, builtin commands (cd, echo, pwd, export, unset, env, exit), execution of binaries via fork/execve, piping (|), and file redirections (<, >, >>, << heredoc).",
     technologies: ["C", "Unix Systems", "Process Management", "fork() / execve()", "Pipes & Redirections", "Signal Handling"],
-    image: "",
+    image: "/images/minishell.jpg",
     githubUrl: "https://github.com/Ykabili/Minishell",
     features: [
       "Lexical scanner and parser generating clean command execution tokens",
@@ -253,7 +253,7 @@ export const PROJECTS: Project[] = [
     shortDescription: "2D top-down tile-based game engine in C using MiniLibX with flood-fill pathfinding map validation and custom sprite rendering.",
     description: "so_long is a 2D top-down game engine developed in C using the MiniLibX graphical library. Features map parsing, flood-fill pathfinding algorithms to validate map solvability before execution, sprite rendering, move counting, collectable gathering, and clean event-driven window management.",
     technologies: ["C", "MiniLibX", "Graphics Programming", "Flood Fill Algorithm", "Pathfinding", "Game Engine"],
-    image: "",
+    image: "/images/so_long.jpg",
     githubUrl: "https://github.com/MAROKI01/so_long",
     features: [
       "Parsing and validation of rectangular grid maps (.ber map files)",
@@ -278,7 +278,7 @@ export const PROJECTS: Project[] = [
     shortDescription: "High-efficiency stack sorting algorithm project in C targeting minimal instruction counts on dual-stack data structures.",
     description: "push_swap is an algorithmic challenge requiring data sorting on two stacks (Stack A and Stack B) using a highly constrained set of stack manipulation instructions (sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrrr). The goal is to sort integer arrays with the absolute minimum number of operations using advanced algorithmic strategies like Radix Sort, Turk algorithm, or Chunking.",
     technologies: ["C", "Algorithms", "Data Structures", "Stack Data Structure", "Complexity Optimization", "Radix Sort"],
-    image: "",
+    image: "/images/push_swap.jpg",
     githubUrl: "https://github.com/MAROKI01/push_swap",
     features: [
       "Custom dynamic Stack data structure implementations in C",
@@ -303,7 +303,7 @@ export const PROJECTS: Project[] = [
     shortDescription: "Inter-Process Communication (IPC) client-server system in C transmitting string payloads via UNIX signals (SIGUSR1 & SIGUSR2).",
     description: "mini_talk is a lightweight Inter-Process Communication (IPC) system built in C. It enables a Client process to transmit text strings to a Server process using exclusively UNIX signals (SIGUSR1 and SIGUSR2) for bit-by-bit binary encoding and acknowledgement handshakes.",
     technologies: ["C", "UNIX Signals", "IPC", "SIGUSR1 / SIGUSR2", "Bitwise Operations", "Process IDs (PID)"],
-    image: "",
+    image: "/images/mini_talk.jpg",
     githubUrl: "https://github.com/MAROKI01/mini_talk",
     features: [
       "Bitwise string decomposition into binary signal streams",
@@ -328,7 +328,7 @@ export const PROJECTS: Project[] = [
     shortDescription: "Intelligent healthcare management application with secure patient medical records, cloud sync, and document classification.",
     description: "medicRecordApp is a cross-platform mobile & web application engineered for secure medical document storage, patient health record management, and cloud database synchronization. Features encrypted user authentication, digital prescription management, cloud document storage, and intelligent search indexing for medical reports.",
     technologies: ["Flutter", "Dart", "Firebase", "Cloud Firestore", "Cloud Storage", "Encryption", "Authentication"],
-    image: "",
+    image: "/images/medic_record.jpg",
     githubUrl: "https://github.com/MAROKI01/medicRecordApp",
     features: [
       "HIPAA-aware secure patient medical record creation & management",
