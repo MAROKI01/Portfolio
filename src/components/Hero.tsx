@@ -15,9 +15,17 @@ export const Hero: React.FC = () => {
     { value: "10+", label: "Software & Systems Projects" },
   ];
 
+  // -------------------------------------------------------------
+  // VIDEO OPACITY & OVERLAY CONTROLS
+  // You can adjust these values anytime to make the video brighter or darker:
+  // - videoOpacity: Controls raw video element opacity (0.0 to 1.0)
+  // - overlayDarkness: Controls dark overlay percentage ('0' to '100')
+  // -------------------------------------------------------------
+  const videoOpacity = 0.35; // Change this number (e.g. 0.2 for dimmer, 0.6 for brighter)
+
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#050505] text-white pt-28 sm:pt-36 lg:pt-44 pb-16 sm:pb-20 lg:pb-24">
-      {/* Background Video (Hardware-Accelerated, Optimized, Filter-Free) */}
+      {/* Background Video (Hardware-Accelerated & Performance-Optimized) */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
         <video
           src="/video.mp4"
@@ -26,10 +34,11 @@ export const Hero: React.FC = () => {
           loop
           playsInline
           preload="auto"
+          style={{ opacity: videoOpacity }}
           className="absolute inset-0 w-full h-full object-cover transform-gpu will-change-transform"
         />
-        {/* Layer 1: Dark Translucent Pure Overlay (No CPU/GPU Backdrop Blur Filter) */}
-        <div className="absolute inset-0 bg-[#050505]/75" />
+        {/* Layer 1: Dark Translucent Overlay (adjust bg-[#050505]/75 to /50 or /90) */}
+        <div className="absolute inset-0 bg-[#050505]/60" />
 
         {/* Layer 2: Dark-Red Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#5C0A14]/30 to-transparent opacity-90" />
@@ -85,7 +94,7 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Technical Stats Grid (Solid Hardware Accelerated Container) */}
+        {/* Technical Stats Grid */}
         <div className="animate-fade-up-delay-4 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-white/10 max-w-3xl">
           {STATS.map((stat, idx) => (
             <div 
