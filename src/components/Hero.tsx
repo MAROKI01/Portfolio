@@ -1,7 +1,16 @@
-import React from 'react';
-import { Cpu, ArrowUpRight, ArrowDown } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Cpu, ArrowUpRight, ArrowDown, Video, VideoOff } from 'lucide-react';
 
 export const Hero: React.FC = () => {
+  const [videoEnabled, setVideoEnabled] = useState<boolean>(() => {
+    // Check if user previously toggled performance mode
+    const saved = localStorage.getItem('hero_video_enabled');
+    return saved !== null ? JSON.parse(saved) : true;
+  });
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+
   const scrollToWork = () => {
     const workElem = document.getElementById('work');
     if (workElem) {
@@ -9,36 +18,89 @@ export const Hero: React.FC = () => {
     }
   };
 
+  const toggleVideo = () => {
+    setVideoEnabled((prev) => {
+      const next = !prev;
+      localStorage.setItem('hero_video_enabled', JSON.stringify(next));
+      return next;
+    });
+  };
+
+  // Pause video when hero section scrolls out of view or tab is inactive to save 100% CPU/GPU
+  useEffect(() => {
+    if (!videoEnabled || !videoRef.current || !heroRef.current) return;
+
+    const videoEl = videoRef.current;
+    
+    // Intersection Observer to pause video when not visible on screen
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoEl.play().catch(() => {});
+          } else {
+            videoEl.pause();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(heroRef.current);
+
+    // Tab visibility listener
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        videoEl.pause();
+      } else if (heroRef.current) {
+        const rect = heroRef.current.getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+          videoEl.play().catch(() => {});
+        }
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [videoEnabled]);
+
   const STATS = [
     { value: "13+", label: "Projects" },
     { value: "3+", label: "AI / Data Projects" },
     { value: "10+", label: "Software & Systems Projects" },
   ];
 
-  // -------------------------------------------------------------
-  // VIDEO OPACITY & OVERLAY CONTROLS
-  // You can adjust these values anytime to make the video brighter or darker:
-  // - videoOpacity: Controls raw video element opacity (0.0 to 1.0)
-  // - overlayDarkness: Controls dark overlay percentage ('0' to '100')
-  // -------------------------------------------------------------
-  const videoOpacity = 0.35; // Change this number (e.g. 0.2 for dimmer, 0.6 for brighter)
-
   return (
-    <section className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#050505] text-white pt-28 sm:pt-36 lg:pt-44 pb-16 sm:pb-20 lg:pb-24">
-      {/* Background Video (Hardware-Accelerated & Performance-Optimized) */}
+    <section 
+      ref={heroRef}
+      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#050505] text-white pt-28 sm:pt-36 lg:pt-44 pb-16 sm:pb-20 lg:pb-24"
+    >
+      {/* Background Media Container */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
-        <video
-          src="/video.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          style={{ opacity: videoOpacity }}
-          className="absolute inset-0 w-full h-full object-cover transform-gpu will-change-transform"
-        />
-        {/* Layer 1: Dark Translucent Overlay (adjust bg-[#050505]/75 to /50 or /90) */}
-        <div className="absolute inset-0 bg-[#050505]/60" />
+        {videoEnabled ? (
+          <>
+            <video
+              ref={videoRef}
+              src="/video.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="absolute inset-0 w-full h-full object-cover transform-gpu opacity-40"
+            />
+            <div className="absolute inset-0 bg-[#050505]/60" />
+          </>
+        ) : (
+          /* Pure CSS High-Performance Technical Canvas (0% CPU/GPU Overhead) */
+          <div className="absolute inset-0 bg-gradient-to-br from-[#050505] via-[#120306] to-[#050505]">
+            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-red-950/25 rounded-full blur-[140px]" />
+          </div>
+        )}
 
         {/* Layer 2: Dark-Red Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#5C0A14]/30 to-transparent opacity-90" />
@@ -52,12 +114,33 @@ export const Hero: React.FC = () => {
 
       {/* Hero Content Container */}
       <div className="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-10 lg:px-16 my-auto">
-        {/* Tagline */}
-        <div className="animate-fade-up flex items-center gap-3 text-white/70 text-xs sm:text-sm font-montserrat font-medium tracking-[0.3em] uppercase mb-6 sm:mb-8">
-          <div className="p-1.5 rounded bg-red-950/60 border border-red-500/40 text-red-400">
-            <Cpu className="w-4 h-4" />
+        {/* Tagline & Performance Mode Toggle */}
+        <div className="animate-fade-up flex flex-wrap items-center justify-between gap-4 mb-6 sm:mb-8">
+          <div className="flex items-center gap-3 text-white/70 text-xs sm:text-sm font-montserrat font-medium tracking-[0.3em] uppercase">
+            <div className="p-1.5 rounded bg-red-950/60 border border-red-500/40 text-red-400">
+              <Cpu className="w-4 h-4" />
+            </div>
+            <span>SOFTWARE ENGINEER • AI &amp; DATA</span>
           </div>
-          <span>SOFTWARE ENGINEER • AI &amp; DATA</span>
+
+          {/* Toggle Video Button (Low Power / High Performance Mode) */}
+          <button
+            onClick={toggleVideo}
+            title="Toggle video background for low power mode"
+            className="flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-white/15 hover:border-red-500/60 bg-[#0A0A0A]/90 text-white/70 hover:text-white px-3 py-1.5 rounded transition-all cursor-pointer pointer-events-auto"
+          >
+            {videoEnabled ? (
+              <>
+                <Video className="w-3.5 h-3.5 text-red-500" />
+                <span>VIDEO: ON (CLICK FOR PERFORMANCE MODE)</span>
+              </>
+            ) : (
+              <>
+                <VideoOff className="w-3.5 h-3.5 text-red-400" />
+                <span>PERFORMANCE MODE (VIDEO OFF)</span>
+              </>
+            )}
+          </button>
         </div>
 
         {/* Main Heading */}
@@ -80,7 +163,7 @@ export const Hero: React.FC = () => {
         <div className="animate-fade-up-delay-3 flex flex-wrap items-center gap-6 sm:gap-8 mb-16 lg:mb-20">
           <button
             onClick={scrollToWork}
-            className="bg-red-900 hover:bg-red-800 text-white px-8 py-4 font-montserrat font-semibold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-[0_0_30px_rgba(178,31,53,0.5)] flex items-center gap-3 border border-red-500/40 group cursor-pointer"
+            className="bg-red-900 hover:bg-red-800 text-white px-8 py-4 font-montserrat font-semibold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-[0_0_30px_rgba(178,31,53,0.5)] flex items-center gap-3 border border-red-500/40 group cursor-pointer pointer-events-auto"
           >
             <span>EXPLORE MY WORK</span>
             <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -120,7 +203,7 @@ export const Hero: React.FC = () => {
         </div>
         <button 
           onClick={scrollToWork}
-          className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"
+          className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer pointer-events-auto"
         >
           <span>SCROLL DOWN</span>
           <ArrowDown className="w-4 h-4 text-red-500 animate-bounce" />
