@@ -18,7 +18,7 @@ export const Navbar: React.FC = () => {
         setScrolled(false);
       }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -43,8 +43,8 @@ export const Navbar: React.FC = () => {
       <header 
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled 
-            ? 'bg-[#050505]/90 backdrop-blur-md border-b border-white/10 py-4 lg:py-5 shadow-2xl' 
-            : 'bg-gradient-to-b from-[#050505]/80 via-[#050505]/30 to-transparent py-5 lg:py-7'
+            ? 'bg-[#050505]/95 border-b border-white/10 py-4 lg:py-5 shadow-2xl' 
+            : 'bg-gradient-to-b from-[#050505]/90 via-[#050505]/40 to-transparent py-5 lg:py-7'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 flex items-center justify-between">

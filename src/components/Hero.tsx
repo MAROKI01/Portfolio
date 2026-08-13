@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#050505] text-white pt-28 sm:pt-36 lg:pt-44 pb-16 sm:pb-20 lg:pb-24">
-      {/* Background Video */}
+      {/* Background Video (Hardware-Accelerated, Optimized, Filter-Free) */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
         <video
           src="/video.mp4"
@@ -25,10 +25,11 @@ export const Hero: React.FC = () => {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover scale-105 filter brightness-90"
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover transform-gpu will-change-transform"
         />
-        {/* Layer 1: Dark Translucent Overlay */}
-        <div className="absolute inset-0 bg-[#050505]/75 backdrop-blur-[2px]" />
+        {/* Layer 1: Dark Translucent Pure Overlay (No CPU/GPU Backdrop Blur Filter) */}
+        <div className="absolute inset-0 bg-[#050505]/75" />
 
         {/* Layer 2: Dark-Red Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#5C0A14]/30 to-transparent opacity-90" />
@@ -56,7 +57,7 @@ export const Hero: React.FC = () => {
           <br />
           THINK.
           <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-red-500 drop-shadow-[0_0_35px_rgba(178,31,53,0.4)]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-red-500">
             ENGINEER.
           </span>
         </h1>
@@ -84,12 +85,12 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Technical Stats Grid */}
+        {/* Technical Stats Grid (Solid Hardware Accelerated Container) */}
         <div className="animate-fade-up-delay-4 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-white/10 max-w-3xl">
           {STATS.map((stat, idx) => (
             <div 
               key={idx} 
-              className="bg-[#0A0A0A]/80 backdrop-blur-md border border-white/10 p-5 sm:p-6 hover:border-red-900/60 transition-all duration-300 group"
+              className="bg-[#0A0A0A]/95 border border-white/10 p-5 sm:p-6 hover:border-red-900/60 transition-all duration-300 group"
             >
               <div className="font-montserrat font-black text-3xl sm:text-4xl text-white group-hover:text-red-500 transition-colors tracking-tight">
                 {stat.value}
