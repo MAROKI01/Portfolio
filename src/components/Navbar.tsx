@@ -60,7 +60,7 @@ export const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 lg:space-x-12">
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-10">
             <a
               href="#work"
               onClick={(e) => handleNavClick(e, '/', '#work')}
@@ -106,11 +106,25 @@ export const Navbar: React.FC = () => {
               ABOUT
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_#B21F35]" />
             </a>
+
+            <Link
+              to="/contact"
+              className={`font-montserrat font-semibold text-sm tracking-widest uppercase relative py-1 transition-colors group ${
+                location.pathname === '/contact' 
+                  ? 'text-black dark:text-white font-bold' 
+                  : 'text-neutral-700 dark:text-white/70 hover:text-black dark:hover:text-white'
+              }`}
+            >
+              CONTACT
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-red-600 transition-all duration-300 shadow-[0_0_8px_#B21F35] ${
+                location.pathname === '/contact' ? 'w-full' : 'w-0 group-hover:w-full'
+              }`} />
+            </Link>
           </nav>
 
           {/* Right CTA & Theme Toggle */}
           <div className="flex items-center gap-3">
-            {/* Theme Toggle Button with Signature Red Icon */}
+            {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
               aria-label="Toggle light/dark theme"

@@ -71,7 +71,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       </div>
 
       {/* Main Navigation Links */}
-      <div className="relative z-10 flex flex-col space-y-6 my-auto py-8">
+      <div className="relative z-10 flex flex-col space-y-5 my-auto py-6">
         <button
           onClick={() => handleNavClick('/', '#work')}
           className="text-left font-montserrat font-extrabold text-3xl sm:text-4xl text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white hover:translate-x-2 transition-all uppercase tracking-wider flex items-center justify-between group"
@@ -102,6 +102,14 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         >
           <span>ABOUT</span>
           <span className="text-xs font-mono text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">04</span>
+        </button>
+
+        <button
+          onClick={() => handleNavClick('/contact')}
+          className="text-left font-montserrat font-extrabold text-3xl sm:text-4xl text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white hover:translate-x-2 transition-all uppercase tracking-wider flex items-center justify-between group"
+        >
+          <span>CONTACT</span>
+          <span className="text-xs font-mono text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">05</span>
         </button>
       </div>
 

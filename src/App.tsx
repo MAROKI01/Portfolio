@@ -6,6 +6,7 @@ import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { Category } from './pages/Category';
 import { Project } from './pages/Project';
+import { Contact } from './pages/Contact';
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -32,6 +33,7 @@ export function App() {
               <Route path="/" element={<Home />} />
               <Route path="/category/:categoryId" element={<Category />} />
               <Route path="/project/:projectId" element={<Project />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </main>

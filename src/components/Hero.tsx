@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Cpu, ArrowUpRight, ArrowDown, Video, VideoOff } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Cpu, ArrowUpRight, ArrowDown, Video, VideoOff, Mail } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const [videoEnabled, setVideoEnabled] = useState<boolean>(() => {
@@ -154,7 +155,7 @@ export const Hero: React.FC = () => {
         </p>
 
         {/* CTA & Projects Badge */}
-        <div className="animate-fade-up-delay-3 flex flex-wrap items-center gap-6 sm:gap-8 mb-8 lg:mb-10">
+        <div className="animate-fade-up-delay-3 flex flex-wrap items-center gap-4 sm:gap-6 mb-8 lg:mb-10">
           <button
             onClick={scrollToWork}
             className="bg-red-900 hover:bg-red-800 text-white px-7 py-3.5 font-montserrat font-semibold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-[0_0_30px_rgba(178,31,53,0.5)] flex items-center gap-3 border border-red-500/40 group cursor-pointer pointer-events-auto"
@@ -162,6 +163,15 @@ export const Hero: React.FC = () => {
             <span>EXPLORE MY WORK</span>
             <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </button>
+
+          {/* Contact Button taking visitor to Contact Page */}
+          <Link
+            to="/contact"
+            className="bg-white dark:bg-[#0A0A0A] hover:bg-neutral-100 dark:hover:bg-red-950/40 text-[#0F0F12] dark:text-white border border-black/15 dark:border-white/20 hover:border-red-500 px-7 py-3.5 font-montserrat font-semibold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 shadow-sm flex items-center gap-2.5 group pointer-events-auto"
+          >
+            <Mail className="w-4 h-4 text-red-600 dark:text-red-500 group-hover:scale-110 transition-transform" />
+            <span>CONTACT ME</span>
+          </Link>
 
           <div className="flex flex-col border-l-2 border-red-600 dark:border-red-800/60 pl-6 py-0.5 font-montserrat">
             <span className="text-xs font-bold tracking-widest text-[#0F0F12] dark:text-white uppercase">13 PROJECTS</span>
