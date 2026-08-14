@@ -1,10 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Cpu, ArrowUpRight, ArrowDown, Video, VideoOff } from 'lucide-react';
+import { Cpu, ArrowUpRight, ArrowDown, Video, VideoOff, Sliders } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const [videoEnabled, setVideoEnabled] = useState<boolean>(() => {
     const saved = localStorage.getItem('hero_video_enabled');
     return saved !== null ? JSON.parse(saved) : true;
+  });
+
+  const [videoOpacity, setVideoOpacity] = useState<number>(() => {
+    const saved = localStorage.getItem('hero_video_opacity');
+    return saved !== null ? Number(saved) : 50;
   });
 
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -88,10 +93,18 @@ export const Hero: React.FC = () => {
               loop
               playsInline
               preload="metadata"
-              className="absolute inset-0 w-full h-full object-cover transform-gpu opacity-100 dark:opacity-100"
+              className="absolute inset-0 w-full h-full object-cover transform-gpu opacity-100"
             />
-            {/* Subtle light translucent overlay */}
-            <div className="absolute inset-0 bg-white/50 dark:bg-[#050505]/40" />
+            {/* Dynamic Ambient Shade Overlay Controlled by User Slider */}
+            <div 
+              className="absolute inset-0 bg-[#F8F9FA] dark:bg-[#050505] transition-opacity duration-75"
+              style={{ opacity: (videoOpacity / 100) * 0.7 }}
+            />
+            {/* Dynamic Radial Vignette Frame Controlled by User Slider */}
+            <div 
+              className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_25%,#F8F9FA_95%)] dark:bg-[radial-gradient(ellipse_at_center,transparent_25%,#050505_95%)] transition-opacity duration-75"
+              style={{ opacity: videoOpacity / 100 }}
+            />
           </>
         ) : (
           /* Pure CSS High-Performance Technical Canvas (0% CPU/GPU Overhead) */
@@ -100,19 +113,13 @@ export const Hero: React.FC = () => {
           </div>
         )}
 
-        {/* Layer 2: Subtle Bottom Gradient Transition */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#F8F9FA] dark:from-[#050505] via-transparent to-transparent opacity-60" />
-
-        {/* Layer 3: Ultra-Light Vignette (Reduced for maximum video clarity) */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_75%,#F8F9FA_100%)] dark:bg-[radial-gradient(ellipse_at_center,transparent_75%,#050505_100%)] opacity-30 pointer-events-none" />
-
         {/* Subtle Tech Grid Lines */}
         <div className="absolute inset-0 tech-line-grid opacity-15 pointer-events-none" />
       </div>
 
       {/* Hero Content Container */}
       <div className="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-10 lg:px-16 my-auto">
-        {/* Tagline & Performance Mode Toggle */}
+        {/* Tagline & Controls Bar */}
         <div className="animate-fade-up flex flex-wrap items-center justify-between gap-4 mb-6 sm:mb-8">
           <div className="flex items-center gap-3 text-neutral-700 dark:text-white/70 text-xs sm:text-sm font-montserrat font-medium tracking-[0.3em] uppercase">
             <div className="p-1.5 rounded bg-red-100 dark:bg-red-950/60 border border-red-300 dark:border-red-500/40 text-red-700 dark:text-red-400">
@@ -121,24 +128,50 @@ export const Hero: React.FC = () => {
             <span>SOFTWARE ENGINEER • AI &amp; DATA</span>
           </div>
 
-          {/* Toggle Video Button (Low Power / High Performance Mode) */}
-          <button
-            onClick={toggleVideo}
-            title="Toggle video background for low power mode"
-            className="flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black/15 dark:border-white/15 hover:border-red-500 bg-white/90 dark:bg-[#0A0A0A]/90 text-neutral-800 dark:text-white/70 hover:text-black dark:hover:text-white px-3 py-1.5 rounded transition-all cursor-pointer pointer-events-auto shadow-sm"
-          >
-            {videoEnabled ? (
-              <>
-                <Video className="w-3.5 h-3.5 text-red-600 dark:text-red-500" />
-                <span>VIDEO: ON (CLICK FOR PERFORMANCE MODE)</span>
-              </>
-            ) : (
-              <>
-                <VideoOff className="w-3.5 h-3.5 text-red-600 dark:text-red-400" />
-                <span>PERFORMANCE MODE (VIDEO OFF)</span>
-              </>
+          {/* Video Controls (Performance Toggle & Manual Vignette Slider) */}
+          <div className="flex flex-wrap items-center gap-3 pointer-events-auto">
+            {videoEnabled && (
+              <div className="flex items-center gap-2.5 border border-black/15 dark:border-white/15 bg-white/90 dark:bg-[#0A0A0A]/90 px-3 py-1.5 rounded text-[10px] font-mono tracking-widest uppercase shadow-sm">
+                <Sliders className="w-3.5 h-3.5 text-red-600 dark:text-red-500" />
+                <span className="text-neutral-800 dark:text-white/80 hidden sm:inline">VIGNETTE:</span>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value={videoOpacity}
+                  onChange={(e) => {
+                    const val = Number(e.target.value);
+                    setVideoOpacity(val);
+                    localStorage.setItem('hero_video_opacity', String(val));
+                  }}
+                  className="w-20 sm:w-28 h-1.5 bg-neutral-200 dark:bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-red-600 dark:accent-red-500"
+                  title="Drag slider to manually control video vignette shading"
+                />
+                <span className="font-bold text-red-600 dark:text-red-400 min-w-[3ch] text-right">
+                  {videoOpacity}%
+                </span>
+              </div>
             )}
-          </button>
+
+            {/* Toggle Video Button */}
+            <button
+              onClick={toggleVideo}
+              title="Toggle video background for low power mode"
+              className="flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black/15 dark:border-white/15 hover:border-red-500 bg-white/90 dark:bg-[#0A0A0A]/90 text-neutral-800 dark:text-white/70 hover:text-black dark:hover:text-white px-3 py-1.5 rounded transition-all cursor-pointer shadow-sm"
+            >
+              {videoEnabled ? (
+                <>
+                  <Video className="w-3.5 h-3.5 text-red-600 dark:text-red-500" />
+                  <span>VIDEO: ON</span>
+                </>
+              ) : (
+                <>
+                  <VideoOff className="w-3.5 h-3.5 text-red-600 dark:text-red-400" />
+                  <span>PERFORMANCE MODE</span>
+                </>
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Main Heading */}
