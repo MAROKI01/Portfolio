@@ -88,12 +88,14 @@ export const Footer: React.FC = () => {
               </a>
 
               <a
-                href="mailto:ntahadout@gmail.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=ntahadout@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center justify-between p-2.5 border border-black/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] hover:border-red-500/50 hover:bg-red-50 dark:hover:bg-red-950/20 text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white transition-all group shadow-sm"
               >
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-red-600 dark:text-red-500" />
-                  <span>EMAIL</span>
+                  <span>EMAIL (GMAIL)</span>
                 </div>
                 <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 dark:text-white/40 group-hover:text-black dark:group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>

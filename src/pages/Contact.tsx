@@ -37,13 +37,13 @@ export const Contact: React.FC = () => {
     },
     {
       id: 'email',
-      title: 'EMAIL',
+      title: 'EMAIL (GMAIL)',
       detail: 'ntahadout@gmail.com',
       subtitle: 'Direct Inquiries & Engineering Proposals',
       icon: Mail,
-      url: 'mailto:ntahadout@gmail.com',
+      url: 'https://mail.google.com/mail/?view=cm&fs=1&to=ntahadout@gmail.com',
       badge: 'DIRECT INBOX',
-      actionText: 'SEND EMAIL'
+      actionText: 'OPEN GMAIL IN BROWSER'
     },
     {
       id: 'whatsapp',
@@ -134,7 +134,7 @@ export const Contact: React.FC = () => {
 
                     <a
                       href={channel.url}
-                      target={channel.id === 'email' ? '_self' : '_blank'}
+                      target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Open ${channel.title}`}
                       className="p-2 border border-black/10 dark:border-white/15 bg-neutral-100 dark:bg-black/50 text-neutral-700 dark:text-white/60 group-hover:text-black dark:group-hover:text-white group-hover:border-red-500 transition-colors"
@@ -158,7 +158,7 @@ export const Contact: React.FC = () => {
                 <div className="pt-4 border-t border-black/10 dark:border-white/10 flex flex-wrap items-center gap-3">
                   <a
                     href={channel.url}
-                    target={channel.id === 'email' ? '_self' : '_blank'}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 bg-red-900 hover:bg-red-800 text-white px-5 py-3 font-montserrat font-semibold text-xs tracking-widest uppercase transition-all duration-300 hover:shadow-[0_0_20px_rgba(178,31,53,0.4)] flex items-center justify-center gap-2 border border-red-500/40 group/btn"
                   >
@@ -169,7 +169,7 @@ export const Contact: React.FC = () => {
                   {channel.id === 'email' && (
                     <button
                       onClick={handleCopyEmail}
-                      title="Copy Email Address"
+                      title="Copy Email Address to Clipboard"
                       className="p-3 border border-black/15 dark:border-white/15 bg-neutral-100 dark:bg-[#050505] hover:border-red-500 text-neutral-800 dark:text-white transition-colors cursor-pointer flex items-center justify-center rounded"
                     >
                       {copiedEmail ? (
