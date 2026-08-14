@@ -42,9 +42,10 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         <Link 
           to="/" 
           onClick={onClose}
-          className="font-montserrat font-extrabold text-2xl sm:text-3xl tracking-wider text-[#0F0F12] dark:text-white uppercase"
+          className="font-montserrat font-extrabold text-2xl sm:text-3xl tracking-wider text-[#0F0F12] dark:text-white uppercase flex items-baseline gap-1.5 group"
         >
-          NOUREDDINE
+          <span>NOUREDDINE</span>
+          <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-600 shadow-[0_0_10px_#B21F35] group-hover:scale-125 transition-transform shrink-0" />
         </Link>
         <div className="flex items-center gap-3">
           {/* Theme Toggle Button with Red Icon */}

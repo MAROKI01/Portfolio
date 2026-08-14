@@ -21,9 +21,10 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-6 space-y-4">
             <Link 
               to="/" 
-              className="font-montserrat font-black text-2xl sm:text-3xl tracking-wider text-[#0F0F12] dark:text-white uppercase inline-block hover:text-red-600 dark:hover:text-red-400 transition-colors"
+              className="font-montserrat font-black text-2xl sm:text-3xl tracking-wider text-[#0F0F12] dark:text-white uppercase flex items-baseline gap-1.5 group hover:text-red-600 dark:hover:text-red-400 transition-colors w-fit"
             >
-              NOUREDDINE
+              <span>NOUREDDINE</span>
+              <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-600 shadow-[0_0_10px_#B21F35] group-hover:scale-125 transition-transform shrink-0" />
             </Link>
             <p className="font-montserrat font-semibold text-xs sm:text-sm text-red-700 dark:text-red-500 tracking-[0.25em] uppercase flex items-center gap-2">
               <Cpu className="w-4 h-4 text-red-600 dark:text-red-500" />
