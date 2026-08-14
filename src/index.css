@@ -6,16 +6,36 @@
   html {
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark, html:not(.light) {
+    background-color: #050505;
+    color: #ffffff;
+    color-scheme: dark;
+  }
+
+  html.light {
+    background-color: #F8F9FA;
+    color: #0F0F12;
+    color-scheme: light;
+  }
+
+  body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark body {
     background-color: #050505;
     color: #ffffff;
   }
 
-  body {
-    background-color: #050505;
-    color: #ffffff;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
+  html.light body {
+    background-color: #F8F9FA;
+    color: #0F0F12;
   }
 }
 
@@ -100,12 +120,26 @@
     linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
+.light .tech-line-grid {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
 .red-glow-card {
   box-shadow: 0 0 35px -5px rgba(92, 10, 20, 0.3);
 }
 
+.light .red-glow-card {
+  box-shadow: 0 10px 30px -5px rgba(143, 23, 38, 0.15);
+}
+
 .red-glow-hover:hover {
   box-shadow: 0 0 30px rgba(178, 31, 53, 0.35);
+}
+
+.light .red-glow-hover:hover {
+  box-shadow: 0 15px 35px rgba(143, 23, 38, 0.2);
 }
 
 /* Custom scrollbar */
@@ -113,15 +147,24 @@
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
+html.dark ::-webkit-scrollbar-track {
   background: #050505;
 }
 
-::-webkit-scrollbar-thumb {
+html.light ::-webkit-scrollbar-track {
+  background: #F8F9FA;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
   background: #2a080d;
   border-radius: 4px;
 }
 
+html.light ::-webkit-scrollbar-thumb {
+  background: #d4a5ab;
+  border-radius: 4px;
+}
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #5C0A14;
+  background: #8F1726;
 }

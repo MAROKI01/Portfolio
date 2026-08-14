@@ -27,14 +27,14 @@ export const Home: React.FC = () => {
   ];
 
   return (
-    <div className="w-full bg-[#050505] text-white">
+    <div className="w-full bg-[#050505] dark:bg-[#050505] light:bg-[#F8F9FA] text-white dark:text-white light:text-[#0F0F12] transition-colors duration-300">
       {/* 1. CINEMATIC HERO */}
       <Hero />
 
       {/* 2. WHAT I BUILD SECTION */}
-      <section className="relative w-full bg-[#050505] py-20 sm:py-24 lg:py-32 border-t border-white/10 px-6 sm:px-10 lg:px-16 overflow-hidden">
+      <section className="relative w-full bg-[#050505] dark:bg-[#050505] light:bg-[#F8F9FA] py-20 sm:py-24 lg:py-32 border-t border-white/10 dark:border-white/10 light:border-black/10 px-6 sm:px-10 lg:px-16 overflow-hidden">
         {/* Subtle Atmospheric Red Backdrop */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-950/15 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-950/15 dark:bg-red-950/15 light:bg-red-200/20 rounded-full blur-[140px] pointer-events-none" />
         <div className="absolute inset-0 tech-line-grid opacity-15 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16 relative z-10">
@@ -42,14 +42,14 @@ export const Home: React.FC = () => {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
-              <h2 className="font-montserrat font-extrabold text-xs sm:text-sm text-red-500 tracking-[0.25em] uppercase">
+              <h2 className="font-montserrat font-extrabold text-xs sm:text-sm text-red-500 dark:text-red-500 light:text-red-700 tracking-[0.25em] uppercase">
                 ENGINEERING DISCIPLINES
               </h2>
             </div>
-            <h3 className="font-montserrat font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white">
+            <h3 className="font-montserrat font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white dark:text-white light:text-[#0F0F12]">
               WHAT I BUILD
             </h3>
-            <p className="font-montserrat text-sm sm:text-base text-white/60 max-w-2xl">
+            <p className="font-montserrat text-sm sm:text-base text-white/60 dark:text-white/60 light:text-neutral-600 max-w-2xl">
               Two disciplines. One engineering mindset. Focused on raw execution, low-level precision, and intelligent system design.
             </p>
           </div>
@@ -86,21 +86,21 @@ export const Home: React.FC = () => {
       </section>
 
       {/* 3. FEATURED PROJECTS GRID SECTION */}
-      <section id="work" className="relative w-full bg-[#050505] py-20 sm:py-24 lg:py-32 border-t border-white/10 px-6 sm:px-10 lg:px-16">
+      <section id="work" className="relative w-full bg-[#050505] dark:bg-[#050505] light:bg-[#F8F9FA] py-20 sm:py-24 lg:py-32 border-t border-white/10 dark:border-white/10 light:border-black/10 px-6 sm:px-10 lg:px-16">
         <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16">
           {/* Header & Filter Controls */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 pb-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 border-b border-white/10 dark:border-white/10 light:border-black/10 pb-8">
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-red-600" />
-                <h2 className="font-montserrat font-extrabold text-xs sm:text-sm text-red-500 tracking-[0.25em] uppercase">
+                <h2 className="font-montserrat font-extrabold text-xs sm:text-sm text-red-500 dark:text-red-500 light:text-red-700 tracking-[0.25em] uppercase">
                   PORTFOLIO ARCHIVE
                 </h2>
               </div>
-              <h3 className="font-montserrat font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white">
+              <h3 className="font-montserrat font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white dark:text-white light:text-[#0F0F12]">
                 FEATURED PROJECTS
               </h3>
-              <p className="font-montserrat text-sm text-white/60 max-w-xl">
+              <p className="font-montserrat text-sm text-white/60 dark:text-white/60 light:text-neutral-600 max-w-xl">
                 Explore 13 complete engineering repositories spanning C/C++ systems, neural networks, WebSockets, graphics, and mobile apps.
               </p>
             </div>
@@ -112,7 +112,7 @@ export const Home: React.FC = () => {
                 className={`font-montserrat font-semibold text-xs tracking-widest uppercase px-5 py-3 border transition-all cursor-pointer ${
                   filter === 'all'
                     ? 'bg-red-900 border-red-500 text-white shadow-[0_0_20px_rgba(178,31,53,0.4)]'
-                    : 'bg-[#0A0A0A] border-white/12 text-white/60 hover:text-white hover:border-white/30'
+                    : 'bg-[#0A0A0A] dark:bg-[#0A0A0A] light:bg-white border-white/12 dark:border-white/12 light:border-black/10 text-white/60 dark:text-white/60 light:text-neutral-700 hover:text-white dark:hover:text-white light:hover:text-black hover:border-white/30'
                 }`}
               >
                 ALL ({PROJECTS.length})
@@ -123,7 +123,7 @@ export const Home: React.FC = () => {
                 className={`font-montserrat font-semibold text-xs tracking-widest uppercase px-5 py-3 border transition-all cursor-pointer ${
                   filter === 'ai-data'
                     ? 'bg-red-900 border-red-500 text-white shadow-[0_0_20px_rgba(178,31,53,0.4)]'
-                    : 'bg-[#0A0A0A] border-white/12 text-white/60 hover:text-white hover:border-white/30'
+                    : 'bg-[#0A0A0A] dark:bg-[#0A0A0A] light:bg-white border-white/12 dark:border-white/12 light:border-black/10 text-white/60 dark:text-white/60 light:text-neutral-700 hover:text-white dark:hover:text-white light:hover:text-black hover:border-white/30'
                 }`}
               >
                 AI &amp; DATA ({aiDataCount})
@@ -134,7 +134,7 @@ export const Home: React.FC = () => {
                 className={`font-montserrat font-semibold text-xs tracking-widest uppercase px-5 py-3 border transition-all cursor-pointer ${
                   filter === 'software-engineering'
                     ? 'bg-red-900 border-red-500 text-white shadow-[0_0_20px_rgba(178,31,53,0.4)]'
-                    : 'bg-[#0A0A0A] border-white/12 text-white/60 hover:text-white hover:border-white/30'
+                    : 'bg-[#0A0A0A] dark:bg-[#0A0A0A] light:bg-white border-white/12 dark:border-white/12 light:border-black/10 text-white/60 dark:text-white/60 light:text-neutral-700 hover:text-white dark:hover:text-white light:hover:text-black hover:border-white/30'
                 }`}
               >
                 SOFTWARE ({softwareCount})
@@ -152,7 +152,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* 4. ABOUT SECTION */}
-      <section id="about" className="relative w-full bg-[#0A0A0A] py-20 sm:py-24 lg:py-32 border-t border-white/10 px-6 sm:px-10 lg:px-16 overflow-hidden">
+      <section id="about" className="relative w-full bg-[#0A0A0A] dark:bg-[#0A0A0A] light:bg-white py-20 sm:py-24 lg:py-32 border-t border-white/10 dark:border-white/10 light:border-black/10 px-6 sm:px-10 lg:px-16 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent opacity-60" />
         <div className="max-w-7xl mx-auto space-y-16">
           {/* Top Info */}
@@ -160,45 +160,45 @@ export const Home: React.FC = () => {
             <div className="lg:col-span-6 space-y-6">
               <div className="flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-red-600" />
-                <h2 className="font-montserrat font-extrabold text-xs sm:text-sm text-red-500 tracking-[0.25em] uppercase">
+                <h2 className="font-montserrat font-extrabold text-xs sm:text-sm text-red-500 dark:text-red-500 light:text-red-700 tracking-[0.25em] uppercase">
                   BIOGRAPHY &amp; CAPABILITIES
                 </h2>
               </div>
-              <h3 className="font-montserrat font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white">
+              <h3 className="font-montserrat font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white dark:text-white light:text-[#0F0F12]">
                 WHO I AM
               </h3>
-              <p className="font-montserrat text-base sm:text-lg text-white/80 leading-relaxed">
-                I am <span className="text-white font-bold">Noureddine</span>, a dedicated Software Engineer focused on building high-performance systems, intelligent AI applications, and robust backend architectures.
+              <p className="font-montserrat text-base sm:text-lg text-white/80 dark:text-white/80 light:text-neutral-800 leading-relaxed">
+                I am <span className="text-white dark:text-white light:text-black font-bold">Noureddine</span>, a dedicated Software Engineer focused on building high-performance systems, intelligent AI applications, and robust backend architectures.
               </p>
-              <p className="font-montserrat text-sm sm:text-base text-white/60 leading-relaxed">
+              <p className="font-montserrat text-sm sm:text-base text-white/60 dark:text-white/60 light:text-neutral-600 leading-relaxed">
                 My work spans low-level C/C++ memory mechanics, real-time socket networking, graphics engine algorithms, and cutting-edge machine learning pipelines with LLMs and computer vision models. I treat engineering as a craft—where architectural clarity, code elegance, and technical performance are non-negotiable.
               </p>
             </div>
 
-            <div className="lg:col-span-6 bg-[#050505] border border-white/12 p-8 sm:p-10 border-l-4 border-l-red-600 space-y-6 red-glow-card">
-              <div className="font-montserrat font-extrabold text-xs text-red-400 tracking-widest uppercase">
+            <div className="lg:col-span-6 bg-[#050505] dark:bg-[#050505] light:bg-[#F8F9FA] border border-white/12 dark:border-white/12 light:border-black/10 p-8 sm:p-10 border-l-4 border-l-red-600 space-y-6 red-glow-card shadow-md">
+              <div className="font-montserrat font-extrabold text-xs text-red-400 dark:text-red-400 light:text-red-700 tracking-widest uppercase">
                 ENGINEERING PROFILE
               </div>
               <div className="grid grid-cols-2 gap-6 text-xs font-montserrat">
                 <div>
-                  <div className="text-white/40 uppercase font-semibold">PRIMARY FOCUS</div>
-                  <div className="text-white font-bold mt-1">Systems &amp; AI Engineering</div>
+                  <div className="text-white/40 dark:text-white/40 light:text-neutral-500 uppercase font-semibold">PRIMARY FOCUS</div>
+                  <div className="text-white dark:text-white light:text-[#0F0F12] font-bold mt-1">Systems &amp; AI Engineering</div>
                 </div>
                 <div>
-                  <div className="text-white/40 uppercase font-semibold">LANGUAGES</div>
-                  <div className="text-white font-bold mt-1">C, C++, Python, TypeScript</div>
+                  <div className="text-white/40 dark:text-white/40 light:text-neutral-500 uppercase font-semibold">LANGUAGES</div>
+                  <div className="text-white dark:text-white light:text-[#0F0F12] font-bold mt-1">C, C++, Python, TypeScript</div>
                 </div>
                 <div>
-                  <div className="text-white/40 uppercase font-semibold">AI FRAMEWORKS</div>
-                  <div className="text-white font-bold mt-1">Mistral AI, PyTorch, LangGraph</div>
+                  <div className="text-white/40 dark:text-white/40 light:text-neutral-500 uppercase font-semibold">AI FRAMEWORKS</div>
+                  <div className="text-white dark:text-white light:text-[#0F0F12] font-bold mt-1">Mistral AI, PyTorch, LangGraph</div>
                 </div>
                 <div>
-                  <div className="text-white/40 uppercase font-semibold">REPOSITORIES</div>
-                  <div className="text-white font-bold mt-1">13 Production Repos</div>
+                  <div className="text-white/40 dark:text-white/40 light:text-neutral-500 uppercase font-semibold">REPOSITORIES</div>
+                  <div className="text-white dark:text-white light:text-[#0F0F12] font-bold mt-1">13 Production Repos</div>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-white/50">
+              <div className="pt-4 border-t border-white/10 dark:border-white/10 light:border-black/10 flex items-center justify-between text-xs font-mono text-white/50 dark:text-white/50 light:text-neutral-500">
                 <span>IDENTITY: NOUREDDINE</span>
                 <span>STATUS: ACTIVE</span>
               </div>
@@ -206,8 +206,8 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Areas Grid */}
-          <div className="space-y-8 pt-8 border-t border-white/10">
-            <h4 className="font-montserrat font-extrabold text-lg sm:text-xl text-white uppercase tracking-tight">
+          <div className="space-y-8 pt-8 border-t border-white/10 dark:border-white/10 light:border-black/10">
+            <h4 className="font-montserrat font-extrabold text-lg sm:text-xl text-white dark:text-white light:text-[#0F0F12] uppercase tracking-tight">
               CORE AREAS OF EXPERTISE
             </h4>
 
@@ -215,15 +215,15 @@ export const Home: React.FC = () => {
               {AREAS.map((area, idx) => (
                 <div
                   key={idx}
-                  className="bg-[#050505] border border-white/10 hover:border-red-600/40 p-6 transition-all duration-300 group"
+                  className="bg-[#050505] dark:bg-[#050505] light:bg-[#F8F9FA] border border-white/10 dark:border-white/10 light:border-black/10 hover:border-red-600/40 p-6 transition-all duration-300 group shadow-sm"
                 >
                   <div className="font-mono text-xs text-red-500 font-bold mb-3">
                     0{idx + 1}.
                   </div>
-                  <h5 className="font-montserrat font-bold text-base text-white uppercase tracking-tight mb-2 group-hover:text-red-400 transition-colors">
+                  <h5 className="font-montserrat font-bold text-base text-white dark:text-white light:text-[#0F0F12] uppercase tracking-tight mb-2 group-hover:text-red-400 dark:group-hover:text-red-400 light:group-hover:text-red-700 transition-colors">
                     {area.title}
                   </h5>
-                  <p className="font-montserrat text-xs text-white/60 leading-relaxed">
+                  <p className="font-montserrat text-xs text-white/60 dark:text-white/60 light:text-neutral-600 leading-relaxed">
                     {area.desc}
                   </p>
                 </div>

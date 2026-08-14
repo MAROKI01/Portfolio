@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
@@ -18,26 +19,28 @@ const ScrollToTop: React.FC = () => {
 
 export function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="min-h-screen bg-[#050505] text-white flex flex-col font-montserrat antialiased selection:bg-red-900 selection:text-white">
-        {/* Sticky/Fixed Navbar */}
-        <Navbar />
+    <ThemeProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="min-h-screen bg-[#050505] dark:bg-[#050505] light:bg-[#F8F9FA] text-white dark:text-white light:text-[#0F0F12] flex flex-col font-montserrat antialiased selection:bg-red-900 selection:text-white transition-colors duration-300">
+          {/* Sticky/Fixed Navbar */}
+          <Navbar />
 
-        {/* Dynamic Route Pages */}
-        <main className="flex-grow w-full">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/category/:categoryId" element={<Category />} />
-            <Route path="/project/:projectId" element={<Project />} />
-            <Route path="*" element={<Home />} />
-          </Routes>
-        </main>
+          {/* Dynamic Route Pages */}
+          <main className="flex-grow w-full">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/category/:categoryId" element={<Category />} />
+              <Route path="/project/:projectId" element={<Project />} />
+              <Route path="*" element={<Home />} />
+            </Routes>
+          </main>
 
-        {/* Global Footer */}
-        <Footer />
-      </div>
-    </Router>
+          {/* Global Footer */}
+          <Footer />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 
