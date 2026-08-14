@@ -13,7 +13,7 @@ export const Contact: React.FC = () => {
   }, []);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('contact@noureddine.dev');
+    navigator.clipboard.writeText('ntahadout@gmail.com');
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2500);
   };
@@ -28,42 +28,42 @@ export const Contact: React.FC = () => {
     {
       id: 'linkedin',
       title: 'LINKEDIN',
-      detail: 'Noureddine',
-      subtitle: 'Professional Profile & Network',
+      detail: 'Noureddine Tahadout',
+      subtitle: 'Professional Profile & Network Connection',
       icon: LinkedinIcon,
-      url: 'https://linkedin.com',
+      url: 'https://www.linkedin.com/in/noureddine-tahadout-7465b51bb/',
       badge: 'RECOMMENDED FOR RECRUITERS',
       actionText: 'CONNECT ON LINKEDIN'
     },
     {
       id: 'email',
       title: 'EMAIL',
-      detail: 'contact@noureddine.dev',
+      detail: 'ntahadout@gmail.com',
       subtitle: 'Direct Inquiries & Engineering Proposals',
       icon: Mail,
-      url: 'mailto:contact@noureddine.dev',
+      url: 'mailto:ntahadout@gmail.com',
       badge: 'DIRECT INBOX',
       actionText: 'SEND EMAIL'
+    },
+    {
+      id: 'whatsapp',
+      title: 'WHATSAPP',
+      detail: '0623219055',
+      subtitle: 'Instant Messaging & Direct Communication',
+      icon: WhatsappIcon,
+      url: 'https://wa.me/212623219055?text=Hello%20Noureddine%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.',
+      badge: 'INSTANT CHAT',
+      actionText: 'OPEN WHATSAPP CHAT'
     },
     {
       id: 'github',
       title: 'GITHUB',
       detail: 'MAROKI01',
-      subtitle: 'Source Code Repositories & Open Source',
+      subtitle: 'Source Code Repositories & Open Source Work',
       icon: GithubIcon,
       url: 'https://github.com/MAROKI01',
       badge: 'CODE REPOS',
       actionText: 'VIEW GITHUB PROFILE'
-    },
-    {
-      id: 'whatsapp',
-      title: 'WHATSAPP',
-      detail: 'Direct Message',
-      subtitle: 'Instant Messaging & Quick Response',
-      icon: WhatsappIcon,
-      url: 'https://wa.me/?text=Hello%20Noureddine%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.',
-      badge: 'INSTANT CHAT',
-      actionText: 'OPEN WHATSAPP CHAT'
     }
   ];
 

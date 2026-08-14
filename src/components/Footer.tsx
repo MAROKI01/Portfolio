@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, ArrowUpRight, Cpu } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './Icons';
+import { GithubIcon, LinkedinIcon, WhatsappIcon } from './Icons';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -60,6 +60,11 @@ export const Footer: React.FC = () => {
                   ABOUT NOUREDDINE
                 </a>
               </li>
+              <li>
+                <Link to="/contact" className="hover:text-black dark:hover:text-white transition-colors hover:translate-x-1 inline-block text-red-600 dark:text-red-400 font-bold">
+                  CONTACT ME →
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -68,25 +73,12 @@ export const Footer: React.FC = () => {
             <h4 className="font-montserrat font-extrabold text-xs text-[#0F0F12] dark:text-white uppercase tracking-widest border-b border-black/10 dark:border-white/10 pb-2">
               CONNECT
             </h4>
-            <div className="flex flex-col space-y-3 font-montserrat text-xs tracking-widest uppercase">
+            <div className="flex flex-col space-y-2.5 font-montserrat text-xs tracking-widest uppercase">
               <a
-                href="https://github.com/MAROKI01"
+                href="https://www.linkedin.com/in/noureddine-tahadout-7465b51bb/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-3 border border-black/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] hover:border-red-500/50 hover:bg-red-50 dark:hover:bg-red-950/20 text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white transition-all group shadow-sm"
-              >
-                <div className="flex items-center gap-2">
-                  <GithubIcon className="w-4 h-4 text-red-600 dark:text-red-500" />
-                  <span>GITHUB</span>
-                </div>
-                <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 dark:text-white/40 group-hover:text-black dark:group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
-
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between p-3 border border-black/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] hover:border-red-500/50 hover:bg-red-50 dark:hover:bg-red-950/20 text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white transition-all group shadow-sm"
+                className="flex items-center justify-between p-2.5 border border-black/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] hover:border-red-500/50 hover:bg-red-50 dark:hover:bg-red-950/20 text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white transition-all group shadow-sm"
               >
                 <div className="flex items-center gap-2">
                   <LinkedinIcon className="w-4 h-4 text-red-600 dark:text-red-500" />
@@ -96,12 +88,38 @@ export const Footer: React.FC = () => {
               </a>
 
               <a
-                href="mailto:contact@noureddine.dev"
-                className="flex items-center justify-between p-3 border border-black/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] hover:border-red-500/50 hover:bg-red-50 dark:hover:bg-red-950/20 text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white transition-all group shadow-sm"
+                href="mailto:ntahadout@gmail.com"
+                className="flex items-center justify-between p-2.5 border border-black/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] hover:border-red-500/50 hover:bg-red-50 dark:hover:bg-red-950/20 text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white transition-all group shadow-sm"
               >
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-red-600 dark:text-red-500" />
                   <span>EMAIL</span>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 dark:text-white/40 group-hover:text-black dark:group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+
+              <a
+                href="https://wa.me/212623219055"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-2.5 border border-black/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] hover:border-red-500/50 hover:bg-red-50 dark:hover:bg-red-950/20 text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white transition-all group shadow-sm"
+              >
+                <div className="flex items-center gap-2">
+                  <WhatsappIcon className="w-4 h-4 text-red-600 dark:text-red-500" />
+                  <span>WHATSAPP</span>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 dark:text-white/40 group-hover:text-black dark:group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+
+              <a
+                href="https://github.com/MAROKI01"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-2.5 border border-black/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] hover:border-red-500/50 hover:bg-red-50 dark:hover:bg-red-950/20 text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white transition-all group shadow-sm"
+              >
+                <div className="flex items-center gap-2">
+                  <GithubIcon className="w-4 h-4 text-red-600 dark:text-red-500" />
+                  <span>GITHUB</span>
                 </div>
                 <ArrowUpRight className="w-3.5 h-3.5 text-neutral-500 dark:text-white/40 group-hover:text-black dark:group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
@@ -112,7 +130,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-montserrat text-neutral-500 dark:text-white/40 uppercase tracking-widest">
           <div>
-            &copy; 2026 NOUREDDINE. ALL RIGHTS RESERVED.
+            &copy; 2026 NOUREDDINE TAHADOUT. ALL RIGHTS RESERVED.
           </div>
           <button
             onClick={scrollToTop}
