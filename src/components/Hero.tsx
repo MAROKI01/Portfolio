@@ -91,7 +91,7 @@ export const Hero: React.FC = () => {
               loop
               playsInline
               preload="metadata"
-              className="absolute inset-0 w-full h-full object-cover transform-gpu opacity-40"
+              className="absolute inset-0 w-full h-full object-cover transform-gpu opacity-100"
             />
             <div className="absolute inset-0 bg-[#050505]/60" />
           </>
