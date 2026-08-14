@@ -122,7 +122,7 @@ export const Hero: React.FC = () => {
           <button
             onClick={toggleVideo}
             title="Toggle video background for low power mode"
-            className="flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black/15 dark:border-white/15 hover:border-red-500 bg-white/90 dark:bg-[#0A0A0A]/90 text-neutral-800 dark:text-white/70 hover:text-black dark:hover:text-white px-3 py-1.5 rounded transition-all cursor-pointer pointer-events-auto shadow-sm"
+            className="flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black/10 dark:border-white/15 hover:border-red-500 bg-white/90 dark:bg-[#0A0A0A]/90 text-neutral-800 dark:text-white/70 hover:text-black dark:hover:text-white px-3 py-1.5 rounded transition-all cursor-pointer pointer-events-auto shadow-sm"
           >
             {videoEnabled ? (
               <>
@@ -167,7 +167,7 @@ export const Hero: React.FC = () => {
           {/* Contact Button taking visitor to Contact Page */}
           <Link
             to="/contact"
-            className="bg-white dark:bg-[#0A0A0A] hover:bg-neutral-100 dark:hover:bg-red-950/40 text-[#0F0F12] dark:text-white border border-black/15 dark:border-white/20 hover:border-red-500 px-7 py-3.5 font-montserrat font-semibold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 shadow-sm flex items-center gap-2.5 group pointer-events-auto"
+            className="bg-white dark:bg-[#0A0A0A] hover:bg-neutral-100 dark:hover:bg-red-950/40 text-[#0F0F12] dark:text-white border border-black/10 dark:border-white/20 hover:border-red-500 px-7 py-3.5 font-montserrat font-semibold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 shadow-sm flex items-center gap-2.5 group pointer-events-auto"
           >
             <Mail className="w-4 h-4 text-red-600 dark:text-red-500 group-hover:scale-110 transition-transform" />
             <span>CONTACT ME</span>

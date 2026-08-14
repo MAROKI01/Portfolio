@@ -28,7 +28,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
   return (
     <Link
       to={linkTo}
-      className="group relative block bg-white dark:bg-[#0A0A0A] border border-black/10 dark:border-white/12 hover:border-red-600/70 dark:hover:border-red-600/70 p-6 sm:p-8 lg:p-10 transition-all duration-500 red-glow-hover flex flex-col justify-between overflow-hidden shadow-md dark:shadow-none"
+      className="group relative block bg-white dark:bg-[#0A0A0A] border border-black/10 dark:border-white/10 hover:border-red-600/70 dark:hover:border-red-600/70 p-6 sm:p-8 lg:p-10 transition-all duration-500 red-glow-hover flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl dark:shadow-none"
     >
       {/* Background Dark-Red Glow & Pattern */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-red-200/40 dark:from-red-950/30 via-red-900/10 to-transparent rounded-full blur-3xl group-hover:from-red-900/40 transition-all duration-700 pointer-events-none" />
@@ -46,7 +46,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
             </span>
           </div>
 
-          <div className="w-10 h-10 border border-black/15 dark:border-white/15 bg-neutral-100 dark:bg-black/50 flex items-center justify-center text-neutral-700 dark:text-white/60 group-hover:text-black dark:group-hover:text-white transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(178,31,53,0.4)]">
+          <div className="w-10 h-10 border border-black/10 dark:border-white/15 bg-neutral-100 dark:bg-black/50 flex items-center justify-center text-neutral-700 dark:text-white/60 group-hover:text-black dark:group-hover:text-white transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(178,31,53,0.4)]">
             <ArrowUpRight className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
         </div>

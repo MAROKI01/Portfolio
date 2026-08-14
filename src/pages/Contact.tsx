@@ -110,7 +110,7 @@ export const Contact: React.FC = () => {
             return (
               <div
                 key={channel.id}
-                className="bg-white dark:bg-[#0A0A0A] border border-black/10 dark:border-white/12 hover:border-red-600/60 dark:hover:border-red-600/60 p-8 sm:p-10 transition-all duration-300 flex flex-col justify-between group shadow-md dark:shadow-none hover:shadow-xl red-glow-hover relative overflow-hidden"
+                className="bg-white dark:bg-[#0A0A0A] border border-black/10 dark:border-white/10 hover:border-red-600/70 dark:hover:border-red-600/70 p-8 sm:p-10 transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-xl dark:shadow-none red-glow-hover relative overflow-hidden"
               >
                 {/* Subtle Red Ambient Glow */}
                 <div className="absolute top-0 right-0 w-48 h-48 bg-red-100/40 dark:bg-red-950/30 rounded-full blur-3xl group-hover:scale-125 transition-transform duration-500 pointer-events-none" />
@@ -170,7 +170,7 @@ export const Contact: React.FC = () => {
                     <button
                       onClick={handleCopyEmail}
                       title="Copy Email Address to Clipboard"
-                      className="p-3 border border-black/15 dark:border-white/15 bg-neutral-100 dark:bg-[#050505] hover:border-red-500 text-neutral-800 dark:text-white transition-colors cursor-pointer flex items-center justify-center rounded"
+                      className="p-3 border border-black/10 dark:border-white/15 bg-neutral-100 dark:bg-[#050505] hover:border-red-500 text-neutral-800 dark:text-white transition-colors cursor-pointer flex items-center justify-center rounded"
                     >
                       {copiedEmail ? (
                         <Check className="w-4 h-4 text-green-500" />
@@ -186,7 +186,7 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* Quick Message Form Section */}
-        <div className="bg-white dark:bg-[#0A0A0A] border border-black/10 dark:border-white/12 p-8 sm:p-12 relative overflow-hidden shadow-md">
+        <div className="bg-white dark:bg-[#0A0A0A] border border-black/10 dark:border-white/10 p-8 sm:p-12 relative overflow-hidden shadow-sm">
           <div className="absolute top-0 right-0 w-80 h-80 bg-red-200/20 dark:bg-red-950/20 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-3xl space-y-8 relative z-10">

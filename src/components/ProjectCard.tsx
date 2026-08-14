@@ -15,7 +15,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
   return (
     <Link
       to={`/project/${project.id}`}
-      className="group relative block bg-white dark:bg-[#0A0A0A] border border-black/10 dark:border-white/12 hover:border-red-600/60 dark:hover:border-red-600/60 transition-all duration-300 transform hover:-translate-y-2 shadow-md dark:shadow-none hover:shadow-xl dark:hover:shadow-[0_0_30px_rgba(143,23,38,0.35)] flex flex-col justify-between h-full overflow-hidden"
+      className="group relative block bg-white dark:bg-[#0A0A0A] border border-black/10 dark:border-white/10 hover:border-red-600/70 dark:hover:border-red-600/70 transition-all duration-300 transform hover:-translate-y-2 shadow-sm hover:shadow-xl dark:shadow-none dark:hover:shadow-[0_0_30px_rgba(143,23,38,0.35)] flex flex-col justify-between h-full overflow-hidden"
     >
       {/* Background Radial Glow on Hover */}
       <div className="absolute inset-0 bg-gradient-to-b from-red-100/30 dark:from-red-950/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -68,13 +68,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
           {/* Floating Category Badge */}
           <div className="absolute top-4 left-4 z-20">
-            <span className="bg-white/90 dark:bg-black/80 backdrop-blur-md border border-black/15 dark:border-white/15 px-3 py-1 font-montserrat font-semibold text-[10px] tracking-widest uppercase text-[#0F0F12] dark:text-white/90 shadow-md">
+            <span className="bg-white/90 dark:bg-black/80 backdrop-blur-md border border-black/10 dark:border-white/15 px-3 py-1 font-montserrat font-semibold text-[10px] tracking-widest uppercase text-[#0F0F12] dark:text-white/90 shadow-sm">
               {project.category === 'ai-data' ? 'AI & DATA' : 'SOFTWARE'}
             </span>
           </div>
 
           {/* Floating Action Arrow */}
-          <div className="absolute bottom-4 right-4 z-20 w-9 h-9 bg-white/90 dark:bg-black/80 backdrop-blur-md border border-black/15 dark:border-white/20 group-hover:border-red-500 flex items-center justify-center text-neutral-700 dark:text-white/80 group-hover:text-black dark:group-hover:text-white transition-all duration-300 shadow-md">
+          <div className="absolute bottom-4 right-4 z-20 w-9 h-9 bg-white/90 dark:bg-black/80 backdrop-blur-md border border-black/10 dark:border-white/20 group-hover:border-red-500 flex items-center justify-center text-neutral-700 dark:text-white/80 group-hover:text-black dark:group-hover:text-white transition-all duration-300 shadow-sm">
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
         </div>
