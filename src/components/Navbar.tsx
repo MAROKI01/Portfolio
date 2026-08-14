@@ -110,15 +110,15 @@ export const Navbar: React.FC = () => {
 
           {/* Right CTA & Theme Toggle */}
           <div className="flex items-center gap-3">
-            {/* Theme Toggle Button */}
+            {/* Theme Toggle Button with Signature Red Icon */}
             <button
               onClick={toggleTheme}
               aria-label="Toggle light/dark theme"
               title={theme === 'dark' ? "Switch to Light Mode" : "Switch to Dark Mode"}
-              className="p-2.5 border border-black/15 dark:border-white/15 bg-black/5 dark:bg-white/5 hover:border-red-500 text-[#0F0F12] dark:text-white transition-all duration-300 flex items-center justify-center cursor-pointer group rounded"
+              className="p-2.5 border border-red-500/30 dark:border-white/15 bg-red-50/50 dark:bg-white/5 hover:border-red-500 transition-all duration-300 flex items-center justify-center cursor-pointer group rounded"
             >
               {theme === 'dark' ? (
-                <Sun className="w-4 h-4 text-amber-400 group-hover:rotate-45 transition-transform" />
+                <Sun className="w-4 h-4 text-red-500 group-hover:rotate-45 transition-transform" />
               ) : (
                 <Moon className="w-4 h-4 text-red-600 group-hover:-rotate-12 transition-transform" />
               )}

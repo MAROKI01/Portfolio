@@ -90,8 +90,8 @@ export const Hero: React.FC = () => {
               preload="metadata"
               className="absolute inset-0 w-full h-full object-cover transform-gpu opacity-100 dark:opacity-100"
             />
-            {/* Overlay depending on mode */}
-            <div className="absolute inset-0 bg-white/80 dark:bg-[#050505]/60" />
+            {/* Subtle light translucent overlay */}
+            <div className="absolute inset-0 bg-white/50 dark:bg-[#050505]/40" />
           </>
         ) : (
           /* Pure CSS High-Performance Technical Canvas (0% CPU/GPU Overhead) */
@@ -100,14 +100,14 @@ export const Hero: React.FC = () => {
           </div>
         )}
 
-        {/* Layer 2: Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#F8F9FA] dark:from-[#050505] via-red-900/10 dark:via-[#5C0A14]/30 to-transparent opacity-90" />
+        {/* Layer 2: Subtle Bottom Gradient Transition */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#F8F9FA] dark:from-[#050505] via-transparent to-transparent opacity-60" />
 
-        {/* Layer 3: Vignette & Edge Shadow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,#F8F9FA_95%)] dark:bg-[radial-gradient(ellipse_at_center,transparent_30%,#050505_95%)] pointer-events-none" />
+        {/* Layer 3: Ultra-Light Vignette (Reduced for maximum video clarity) */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_75%,#F8F9FA_100%)] dark:bg-[radial-gradient(ellipse_at_center,transparent_75%,#050505_100%)] opacity-30 pointer-events-none" />
 
         {/* Subtle Tech Grid Lines */}
-        <div className="absolute inset-0 tech-line-grid opacity-20 pointer-events-none" />
+        <div className="absolute inset-0 tech-line-grid opacity-15 pointer-events-none" />
       </div>
 
       {/* Hero Content Container */}
@@ -180,7 +180,7 @@ export const Hero: React.FC = () => {
           {STATS.map((stat, idx) => (
             <div 
               key={idx} 
-              className="bg-white dark:bg-[#0A0A0A]/95 border border-black/10 dark:border-white/10 p-5 sm:p-6 hover:border-red-600 dark:hover:border-red-900/60 transition-all duration-300 group shadow-sm dark:shadow-none"
+              className="bg-white/90 dark:bg-[#0A0A0A]/95 border border-black/10 dark:border-white/10 p-5 sm:p-6 hover:border-red-600 dark:hover:border-red-900/60 transition-all duration-300 group shadow-sm dark:shadow-none"
             >
               <div className="font-montserrat font-black text-3xl sm:text-4xl text-[#0F0F12] dark:text-white group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors tracking-tight">
                 {stat.value}
