@@ -53,14 +53,23 @@ export const Navbar: React.FC = () => {
           {/* Left Brand with Red Dot on Very Bottom Right */}
           <Link 
             to="/" 
-            className="font-montserrat font-extrabold text-2xl sm:text-3xl tracking-wider text-[#0F0F12] dark:text-white uppercase flex items-baseline gap-1.5 group"
+            className="font-montserrat font-extrabold text-lg sm:text-xl lg:text-2xl tracking-wider text-[#0F0F12] dark:text-white uppercase flex items-baseline gap-1.5 group"
           >
-            <span>NOUREDDINE</span>
+            <span>NOUREDDINE TAHADOUT</span>
             <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-600 shadow-[0_0_10px_#B21F35] group-hover:scale-125 transition-transform shrink-0" />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6 lg:space-x-10">
+            <a
+              href="#about"
+              onClick={(e) => handleNavClick(e, '/', '#about')}
+              className="font-montserrat font-semibold text-sm text-neutral-700 dark:text-white/70 hover:text-black dark:hover:text-white tracking-widest uppercase relative py-1 transition-colors group"
+            >
+              ABOUT
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_#B21F35]" />
+            </a>
+
             <a
               href="#work"
               onClick={(e) => handleNavClick(e, '/', '#work')}
@@ -97,15 +106,6 @@ export const Navbar: React.FC = () => {
                 location.pathname === '/category/software-engineering' ? 'w-full' : 'w-0 group-hover:w-full'
               }`} />
             </Link>
-
-            <a
-              href="#about"
-              onClick={(e) => handleNavClick(e, '/', '#about')}
-              className="font-montserrat font-semibold text-sm text-neutral-700 dark:text-white/70 hover:text-black dark:hover:text-white tracking-widest uppercase relative py-1 transition-colors group"
-            >
-              ABOUT
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_#B21F35]" />
-            </a>
 
             <Link
               to="/contact"

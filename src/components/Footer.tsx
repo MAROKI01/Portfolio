@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
               to="/" 
               className="font-montserrat font-black text-2xl sm:text-3xl tracking-wider text-[#0F0F12] dark:text-white uppercase flex items-baseline gap-1.5 group hover:text-red-600 dark:hover:text-red-400 transition-colors w-fit"
             >
-              <span>NOUREDDINE</span>
+              <span>NOUREDDINE TAHADOUT</span>
               <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-600 shadow-[0_0_10px_#B21F35] group-hover:scale-125 transition-transform shrink-0" />
             </Link>
             <p className="font-montserrat font-semibold text-xs sm:text-sm text-red-700 dark:text-red-500 tracking-[0.25em] uppercase flex items-center gap-2">
@@ -42,6 +42,11 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 font-montserrat text-xs text-neutral-600 dark:text-white/60 tracking-wider uppercase">
               <li>
+                <a href="/#about" className="hover:text-black dark:hover:text-white transition-colors hover:translate-x-1 inline-block">
+                  ABOUT NOUREDDINE
+                </a>
+              </li>
+              <li>
                 <Link to="/" className="hover:text-black dark:hover:text-white transition-colors hover:translate-x-1 inline-block">
                   HOME / WORK
                 </Link>
@@ -55,11 +60,6 @@ export const Footer: React.FC = () => {
                 <Link to="/category/software-engineering" className="hover:text-black dark:hover:text-white transition-colors hover:translate-x-1 inline-block">
                   SOFTWARE ENGINEERING
                 </Link>
-              </li>
-              <li>
-                <a href="/#about" className="hover:text-black dark:hover:text-white transition-colors hover:translate-x-1 inline-block">
-                  ABOUT NOUREDDINE
-                </a>
               </li>
               <li>
                 <Link to="/contact" className="hover:text-black dark:hover:text-white transition-colors hover:translate-x-1 inline-block text-red-600 dark:text-red-400 font-bold">

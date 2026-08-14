@@ -42,9 +42,9 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         <Link 
           to="/" 
           onClick={onClose}
-          className="font-montserrat font-extrabold text-2xl sm:text-3xl tracking-wider text-[#0F0F12] dark:text-white uppercase flex items-baseline gap-1.5 group"
+          className="font-montserrat font-extrabold text-xl sm:text-2xl tracking-wider text-[#0F0F12] dark:text-white uppercase flex items-baseline gap-1.5 group"
         >
-          <span>NOUREDDINE</span>
+          <span>NOUREDDINE TAHADOUT</span>
           <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-600 shadow-[0_0_10px_#B21F35] group-hover:scale-125 transition-transform shrink-0" />
         </Link>
         <div className="flex items-center gap-3">
@@ -74,11 +74,19 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       {/* Main Navigation Links */}
       <div className="relative z-10 flex flex-col space-y-5 my-auto py-6">
         <button
+          onClick={() => handleNavClick('/', '#about')}
+          className="text-left font-montserrat font-extrabold text-3xl sm:text-4xl text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white hover:translate-x-2 transition-all uppercase tracking-wider flex items-center justify-between group"
+        >
+          <span>ABOUT</span>
+          <span className="text-xs font-mono text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">01</span>
+        </button>
+
+        <button
           onClick={() => handleNavClick('/', '#work')}
           className="text-left font-montserrat font-extrabold text-3xl sm:text-4xl text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white hover:translate-x-2 transition-all uppercase tracking-wider flex items-center justify-between group"
         >
           <span>WORK</span>
-          <span className="text-xs font-mono text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">01</span>
+          <span className="text-xs font-mono text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">02</span>
         </button>
 
         <button
@@ -86,7 +94,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           className="text-left font-montserrat font-extrabold text-3xl sm:text-4xl text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white hover:translate-x-2 transition-all uppercase tracking-wider flex items-center justify-between group"
         >
           <span>AI &amp; DATA</span>
-          <span className="text-xs font-mono text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">02</span>
+          <span className="text-xs font-mono text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">03</span>
         </button>
 
         <button
@@ -94,14 +102,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           className="text-left font-montserrat font-extrabold text-3xl sm:text-4xl text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white hover:translate-x-2 transition-all uppercase tracking-wider flex items-center justify-between group"
         >
           <span>SOFTWARE</span>
-          <span className="text-xs font-mono text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">03</span>
-        </button>
-
-        <button
-          onClick={() => handleNavClick('/', '#about')}
-          className="text-left font-montserrat font-extrabold text-3xl sm:text-4xl text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white hover:translate-x-2 transition-all uppercase tracking-wider flex items-center justify-between group"
-        >
-          <span>ABOUT</span>
           <span className="text-xs font-mono text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">04</span>
         </button>
 
