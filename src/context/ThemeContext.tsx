@@ -25,6 +25,18 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       root.classList.remove('dark');
     }
     localStorage.setItem('theme', theme);
+
+    // Inverted Dynamic Favicon Switcher for maximum browser tab contrast
+    let favicon = document.querySelector<HTMLLinkElement>("link[rel*='icon']");
+    if (!favicon) {
+      favicon = document.createElement('link');
+      favicon.rel = 'icon';
+      document.head.appendChild(favicon);
+    }
+    favicon.type = 'image/png';
+    favicon.setAttribute('sizes', '32x32');
+    // Inverted: Light icon on dark theme, dark icon on light theme
+    favicon.href = theme === 'dark' ? '/favicon_light.png' : '/favicon_dark.png';
   }, [theme]);
 
   const toggleTheme = () => {
