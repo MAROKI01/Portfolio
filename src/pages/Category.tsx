@@ -23,22 +23,22 @@ export const Category: React.FC = () => {
       subtitle: 'INTELLIGENT SYSTEMS & DATA-DRIVEN SOFTWARE',
       description: 'Intelligent systems, machine learning experiments, computer vision pipelines, autonomous agent graphs, and high-performance data processing software.',
       icon: Brain,
-      color: 'from-red-950/40 via-[#050505] to-[#050505] dark:from-red-950/40 dark:via-[#050505] dark:to-[#050505] light:from-red-100/50 light:via-[#F8F9FA] light:to-[#F8F9FA]'
+      color: 'from-red-100/50 via-[#F8F9FA] to-[#F8F9FA] dark:from-red-950/40 dark:via-[#050505] dark:to-[#050505]'
     },
     'software-engineering': {
       title: 'SOFTWARE ENGINEERING',
       subtitle: 'SYSTEMS, APPLICATIONS, ALGORITHMS & INFRASTRUCTURE',
       description: 'Low-level systems programming in C/C++, graphics raycasting engines, RFC-compliant socket servers, process synchronization, WebSockets, and full-stack applications.',
       icon: Code2,
-      color: 'from-red-950/40 via-[#050505] to-[#050505] dark:from-red-950/40 dark:via-[#050505] dark:to-[#050505] light:from-red-100/50 light:via-[#F8F9FA] light:to-[#F8F9FA]'
+      color: 'from-red-100/50 via-[#F8F9FA] to-[#F8F9FA] dark:from-red-950/40 dark:via-[#050505] dark:to-[#050505]'
     }
   };
 
   if (!isValidCategory) {
     return (
-      <div className="min-h-screen bg-[#050505] dark:bg-[#050505] light:bg-[#F8F9FA] text-white dark:text-white light:text-[#0F0F12] flex flex-col items-center justify-center p-6 text-center">
-        <h1 className="font-montserrat font-black text-4xl text-white dark:text-white light:text-black mb-4">CATEGORY NOT FOUND</h1>
-        <p className="font-montserrat text-sm text-white/60 dark:text-white/60 light:text-neutral-600 mb-8">The requested discipline category does not exist.</p>
+      <div className="min-h-screen bg-[#F8F9FA] dark:bg-[#050505] text-[#0F0F12] dark:text-white flex flex-col items-center justify-center p-6 text-center">
+        <h1 className="font-montserrat font-black text-4xl text-[#0F0F12] dark:text-white mb-4">CATEGORY NOT FOUND</h1>
+        <p className="font-montserrat text-sm text-neutral-600 dark:text-white/60 mb-8">The requested discipline category does not exist.</p>
         <Link
           to="/"
           className="bg-red-900 border border-red-500 text-white px-6 py-3 font-montserrat font-semibold text-xs tracking-widest uppercase"
@@ -53,9 +53,9 @@ export const Category: React.FC = () => {
   const CategoryIcon = currentHeader.icon;
 
   return (
-    <div className="w-full bg-[#050505] dark:bg-[#050505] light:bg-[#F8F9FA] text-white dark:text-white light:text-[#0F0F12] min-h-screen pt-28 sm:pt-36 pb-24 transition-colors duration-300">
+    <div className="w-full bg-[#F8F9FA] dark:bg-[#050505] text-[#0F0F12] dark:text-white min-h-screen pt-28 sm:pt-36 pb-24 transition-colors duration-300">
       {/* Category Hero Header */}
-      <section className="relative w-full border-b border-white/10 dark:border-white/10 light:border-black/10 px-6 sm:px-10 lg:px-16 pb-16 lg:pb-20 overflow-hidden">
+      <section className="relative w-full border-b border-black/10 dark:border-white/10 px-6 sm:px-10 lg:px-16 pb-16 lg:pb-20 overflow-hidden">
         <div className={`absolute inset-0 bg-gradient-to-b ${currentHeader.color} pointer-events-none`} />
         <div className="absolute inset-0 tech-line-grid opacity-20 pointer-events-none" />
 
@@ -64,9 +64,9 @@ export const Category: React.FC = () => {
           <div>
             <button
               onClick={() => navigate('/')}
-              className="inline-flex items-center gap-2 text-xs font-montserrat font-semibold tracking-widest text-white/60 dark:text-white/60 light:text-neutral-700 hover:text-white dark:hover:text-white light:hover:text-black uppercase transition-colors group border border-white/10 dark:border-white/10 light:border-black/10 hover:border-red-500/50 bg-[#0A0A0A] dark:bg-[#0A0A0A] light:bg-white px-4 py-2 cursor-pointer shadow-sm"
+              className="inline-flex items-center gap-2 text-xs font-montserrat font-semibold tracking-widest text-neutral-700 dark:text-white/60 hover:text-black dark:hover:text-white uppercase transition-colors group border border-black/10 dark:border-white/10 hover:border-red-500/50 bg-white dark:bg-[#0A0A0A] px-4 py-2 cursor-pointer shadow-sm"
             >
-              <ArrowLeft className="w-4 h-4 text-red-500 group-hover:-translate-x-1 transition-transform" />
+              <ArrowLeft className="w-4 h-4 text-red-600 dark:text-red-500 group-hover:-translate-x-1 transition-transform" />
               <span>BACK TO WORK</span>
             </button>
           </div>
@@ -74,23 +74,23 @@ export const Category: React.FC = () => {
           {/* Title & Badge */}
           <div className="space-y-4 max-w-4xl">
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-red-950/60 dark:bg-red-950/60 light:bg-red-50 border border-red-500/40 text-red-400 dark:text-red-400 light:text-red-700 rounded">
+              <div className="p-2 bg-red-50 dark:bg-red-950/60 border border-red-300 dark:border-red-500/40 text-red-700 dark:text-red-400 rounded">
                 <CategoryIcon className="w-5 h-5" />
               </div>
-              <span className="font-montserrat font-extrabold text-xs text-red-500 dark:text-red-500 light:text-red-700 tracking-[0.25em] uppercase">
+              <span className="font-montserrat font-extrabold text-xs text-red-700 dark:text-red-500 tracking-[0.25em] uppercase">
                 {projects.length} REPOSITORIES
               </span>
             </div>
 
-            <h1 className="font-montserrat font-black uppercase text-4xl sm:text-5xl lg:text-6xl text-white dark:text-white light:text-[#0F0F12] tracking-tight leading-none">
+            <h1 className="font-montserrat font-black uppercase text-4xl sm:text-5xl lg:text-6xl text-[#0F0F12] dark:text-white tracking-tight leading-none">
               {currentHeader.title}
             </h1>
 
-            <p className="font-montserrat font-bold text-xs sm:text-sm text-red-400 dark:text-red-400 light:text-red-700 uppercase tracking-widest">
+            <p className="font-montserrat font-bold text-xs sm:text-sm text-red-700 dark:text-red-400 uppercase tracking-widest">
               {currentHeader.subtitle}
             </p>
 
-            <p className="font-montserrat text-sm sm:text-base text-white/70 dark:text-white/70 light:text-neutral-600 leading-relaxed max-w-2xl pt-2">
+            <p className="font-montserrat text-sm sm:text-base text-neutral-600 dark:text-white/70 leading-relaxed max-w-2xl pt-2">
               {currentHeader.description}
             </p>
           </div>

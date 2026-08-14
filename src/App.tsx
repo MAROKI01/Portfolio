@@ -22,7 +22,7 @@ export function App() {
     <ThemeProvider>
       <Router>
         <ScrollToTop />
-        <div className="min-h-screen bg-[#050505] dark:bg-[#050505] light:bg-[#F8F9FA] text-white dark:text-white light:text-[#0F0F12] flex flex-col font-montserrat antialiased selection:bg-red-900 selection:text-white transition-colors duration-300">
+        <div className="min-h-screen bg-[#F8F9FA] dark:bg-[#050505] text-[#0F0F12] dark:text-white flex flex-col font-montserrat antialiased selection:bg-red-900 selection:text-white transition-colors duration-300">
           {/* Sticky/Fixed Navbar */}
           <Navbar />
 
