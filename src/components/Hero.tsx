@@ -74,7 +74,7 @@ export const Hero: React.FC = () => {
   return (
     <section 
       ref={heroRef}
-      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#F8F9FA] dark:bg-[#050505] text-[#0F0F12] dark:text-white pt-28 sm:pt-36 lg:pt-44 pb-16 sm:pb-20 lg:pb-24 transition-colors duration-300"
+      className="relative min-h-[90vh] lg:min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#F8F9FA] dark:bg-[#050505] text-[#0F0F12] dark:text-white pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 transition-colors duration-300"
     >
       {/* Background Media Container */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
@@ -109,7 +109,7 @@ export const Hero: React.FC = () => {
       {/* Hero Content Container */}
       <div className="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-10 lg:px-16 my-auto">
         {/* Tagline & Performance Mode Toggle */}
-        <div className="animate-fade-up flex flex-wrap items-center justify-between gap-4 mb-6 sm:mb-8">
+        <div className="animate-fade-up flex flex-wrap items-center justify-between gap-4 mb-4 sm:mb-6">
           <div className="flex items-center gap-3 text-neutral-700 dark:text-white/70 text-xs sm:text-sm font-montserrat font-medium tracking-[0.3em] uppercase">
             <div className="p-1.5 rounded bg-red-100 dark:bg-red-950/60 border border-red-300 dark:border-red-500/40 text-red-700 dark:text-red-400">
               <Cpu className="w-4 h-4" />
@@ -138,7 +138,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Main Heading */}
-        <h1 className="animate-fade-up-delay-1 font-montserrat font-black uppercase leading-[0.88] tracking-[-0.04em] text-[clamp(3rem,8.5vw,7rem)] text-[#0F0F12] dark:text-white mb-8 sm:mb-10 max-w-5xl">
+        <h1 className="animate-fade-up-delay-1 font-montserrat font-black uppercase leading-[0.9] tracking-[-0.04em] text-[clamp(2.5rem,6.5vw,5.2rem)] text-[#0F0F12] dark:text-white mb-4 sm:mb-6 max-w-5xl">
           BUILD.
           <br />
           THINK.
@@ -149,21 +149,21 @@ export const Hero: React.FC = () => {
         </h1>
 
         {/* Description */}
-        <p className="animate-fade-up-delay-2 font-montserrat text-sm sm:text-base text-neutral-600 dark:text-white/60 leading-relaxed max-w-lg mb-10 sm:mb-12">
+        <p className="animate-fade-up-delay-2 font-montserrat text-sm sm:text-base text-neutral-600 dark:text-white/60 leading-relaxed max-w-lg mb-6 sm:mb-8">
           I build intelligent systems, scalable applications, and experimental digital experiences across AI, data, and software engineering.
         </p>
 
         {/* CTA & Projects Badge */}
-        <div className="animate-fade-up-delay-3 flex flex-wrap items-center gap-6 sm:gap-8 mb-16 lg:mb-20">
+        <div className="animate-fade-up-delay-3 flex flex-wrap items-center gap-6 sm:gap-8 mb-8 lg:mb-10">
           <button
             onClick={scrollToWork}
-            className="bg-red-900 hover:bg-red-800 text-white px-8 py-4 font-montserrat font-semibold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-[0_0_30px_rgba(178,31,53,0.5)] flex items-center gap-3 border border-red-500/40 group cursor-pointer pointer-events-auto"
+            className="bg-red-900 hover:bg-red-800 text-white px-7 py-3.5 font-montserrat font-semibold text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 hover:shadow-[0_0_30px_rgba(178,31,53,0.5)] flex items-center gap-3 border border-red-500/40 group cursor-pointer pointer-events-auto"
           >
             <span>EXPLORE MY WORK</span>
             <ArrowUpRight className="w-4 h-4 text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </button>
 
-          <div className="flex flex-col border-l-2 border-red-600 dark:border-red-800/60 pl-6 py-1 font-montserrat">
+          <div className="flex flex-col border-l-2 border-red-600 dark:border-red-800/60 pl-6 py-0.5 font-montserrat">
             <span className="text-xs font-bold tracking-widest text-[#0F0F12] dark:text-white uppercase">13 PROJECTS</span>
             <span className="text-[11px] font-medium tracking-wider text-neutral-500 dark:text-white/50 uppercase mt-0.5">
               AI • SOFTWARE • SYSTEMS
@@ -172,16 +172,16 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Technical Stats Grid */}
-        <div className="animate-fade-up-delay-4 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-black/10 dark:border-white/10 max-w-3xl">
+        <div className="animate-fade-up-delay-4 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-5 pt-6 border-t border-black/10 dark:border-white/10 max-w-3xl">
           {STATS.map((stat, idx) => (
             <div 
               key={idx} 
-              className="bg-white/90 dark:bg-[#0A0A0A]/95 border border-black/10 dark:border-white/10 p-5 sm:p-6 hover:border-red-600 dark:hover:border-red-900/60 transition-all duration-300 group shadow-sm dark:shadow-none"
+              className="bg-white/90 dark:bg-[#0A0A0A]/95 border border-black/10 dark:border-white/10 p-4 sm:p-5 hover:border-red-600 dark:hover:border-red-900/60 transition-all duration-300 group shadow-sm dark:shadow-none"
             >
-              <div className="font-montserrat font-black text-3xl sm:text-4xl text-[#0F0F12] dark:text-white group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors tracking-tight">
+              <div className="font-montserrat font-black text-2xl sm:text-3xl text-[#0F0F12] dark:text-white group-hover:text-red-600 dark:group-hover:text-red-500 transition-colors tracking-tight">
                 {stat.value}
               </div>
-              <div className="font-montserrat font-semibold text-xs text-neutral-500 dark:text-white/60 tracking-wider uppercase mt-2">
+              <div className="font-montserrat font-semibold text-[11px] text-neutral-500 dark:text-white/60 tracking-wider uppercase mt-1.5">
                 {stat.label}
               </div>
             </div>
@@ -190,7 +190,7 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Scroll Down Indicator */}
-      <div className="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-10 lg:px-16 pt-8 flex items-center justify-between text-xs text-neutral-500 dark:text-white/40 font-montserrat tracking-widest uppercase">
+      <div className="relative z-10 max-w-7xl w-full mx-auto px-6 sm:px-10 lg:px-16 pt-6 flex items-center justify-between text-xs text-neutral-500 dark:text-white/40 font-montserrat tracking-widest uppercase">
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
           <span>BASED IN ENGINEERING &amp; SYSTEMS</span>
