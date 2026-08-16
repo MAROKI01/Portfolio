@@ -37,9 +37,9 @@ export const AcademicTimeline: React.FC = () => {
       <div className="space-y-2">
         <div className="flex items-center gap-3">
           <Sparkles className="w-4 h-4 text-red-600 dark:text-red-500" />
-          <h4 className="font-montserrat font-extrabold text-xs text-red-700 dark:text-red-500 tracking-[0.25em] uppercase">
+          <span className="font-montserrat font-extrabold text-xs text-red-700 dark:text-red-500 tracking-[0.25em] uppercase">
             EDUCATION &amp; PARCOURS
-          </h4>
+          </span>
         </div>
         <h3 className="font-montserrat font-black text-2xl sm:text-3xl lg:text-4xl text-[#0F0F12] dark:text-white uppercase tracking-tight">
           ACADEMIC JOURNEY

@@ -5,6 +5,8 @@ import { ProjectHero } from '../components/ProjectHero';
 import { ProjectDetails } from '../components/ProjectDetails';
 import { ArrowLeft } from 'lucide-react';
 
+import { SEO } from '../components/SEO';
+
 export const Project: React.FC = () => {
   const { projectId } = useParams<{ projectId: string }>();
 
@@ -17,6 +19,7 @@ export const Project: React.FC = () => {
   if (!project) {
     return (
       <div className="min-h-screen bg-[#050505] text-white flex flex-col items-center justify-center p-6 text-center">
+        <SEO title="Project Not Found | Noureddine Tahadout" />
         <h1 className="font-montserrat font-black text-4xl sm:text-5xl text-white mb-4">
           PROJECT NOT FOUND
         </h1>
@@ -36,6 +39,13 @@ export const Project: React.FC = () => {
 
   return (
     <div className="w-full bg-[#050505] text-white min-h-screen">
+      <SEO
+        title={`${project.title} - ${project.shortDescription} | Noureddine Tahadout`}
+        description={project.description.length > 155 ? `${project.description.slice(0, 155)}...` : project.description}
+        canonical={`https://noureddinetahadout.com/project/${project.id}`}
+        ogImage={project.image || "/images/cub3d.jpg"}
+      />
+
       {/* 1. Project Hero Header */}
       <ProjectHero project={project} />
 

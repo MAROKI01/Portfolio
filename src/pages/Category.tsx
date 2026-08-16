@@ -4,6 +4,8 @@ import { getProjectsByCategory } from '../data/projects';
 import { ProjectCard } from '../components/ProjectCard';
 import { ArrowLeft, Brain, Code2 } from 'lucide-react';
 
+import { SEO } from '../components/SEO';
+
 export const Category: React.FC = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
   const navigate = useNavigate();
@@ -19,16 +21,16 @@ export const Category: React.FC = () => {
 
   const headers = {
     'ai-data': {
-      title: 'AI & DATA',
+      title: 'AI & DATA PROJECTS',
       subtitle: 'INTELLIGENT SYSTEMS & DATA-DRIVEN SOFTWARE',
-      description: 'Intelligent systems, machine learning experiments, computer vision pipelines, autonomous agent graphs, and high-performance data processing software.',
+      description: 'Intelligent systems, machine learning experiments, computer vision pipelines, autonomous agent graphs, and high-performance data processing software built by Noureddine Tahadout.',
       icon: Brain,
       color: 'from-red-100/50 via-[#F8F9FA] to-[#F8F9FA] dark:from-red-950/40 dark:via-[#050505] dark:to-[#050505]'
     },
     'software-engineering': {
-      title: 'SOFTWARE ENGINEERING',
+      title: 'SOFTWARE ENGINEERING PROJECTS',
       subtitle: 'SYSTEMS, APPLICATIONS, ALGORITHMS & INFRASTRUCTURE',
-      description: 'Low-level systems programming in C/C++, graphics raycasting engines, RFC-compliant socket servers, process synchronization, WebSockets, and full-stack applications.',
+      description: 'Low-level systems programming in C/C++, graphics raycasting engines, RFC-compliant socket servers, process synchronization, WebSockets, and full-stack applications built by Noureddine Tahadout.',
       icon: Code2,
       color: 'from-red-100/50 via-[#F8F9FA] to-[#F8F9FA] dark:from-red-950/40 dark:via-[#050505] dark:to-[#050505]'
     }
@@ -37,6 +39,7 @@ export const Category: React.FC = () => {
   if (!isValidCategory) {
     return (
       <div className="min-h-screen bg-[#F8F9FA] dark:bg-[#050505] text-[#0F0F12] dark:text-white flex flex-col items-center justify-center p-6 text-center">
+        <SEO title="Category Not Found | Noureddine Tahadout" />
         <h1 className="font-montserrat font-black text-4xl text-[#0F0F12] dark:text-white mb-4">CATEGORY NOT FOUND</h1>
         <p className="font-montserrat text-sm text-neutral-600 dark:text-white/60 mb-8">The requested discipline category does not exist.</p>
         <Link
@@ -51,9 +54,16 @@ export const Category: React.FC = () => {
 
   const currentHeader = headers[categoryType];
   const CategoryIcon = currentHeader.icon;
+  const pageTitle = `${currentHeader.title} | Noureddine Tahadout`;
 
   return (
     <div className="w-full bg-[#F8F9FA] dark:bg-[#050505] text-[#0F0F12] dark:text-white min-h-screen pt-28 sm:pt-36 pb-24 transition-colors duration-300">
+      <SEO
+        title={pageTitle}
+        description={currentHeader.description}
+        canonical={`https://noureddinetahadout.com/category/${categoryId}`}
+      />
+
       {/* Category Hero Header */}
       <section className="relative w-full border-b border-black/10 dark:border-white/10 px-6 sm:px-10 lg:px-16 pb-16 lg:pb-20 overflow-hidden">
         <div className={`absolute inset-0 bg-gradient-to-b ${currentHeader.color} pointer-events-none`} />
@@ -78,7 +88,7 @@ export const Category: React.FC = () => {
                 <CategoryIcon className="w-5 h-5" />
               </div>
               <span className="font-montserrat font-extrabold text-xs text-red-700 dark:text-red-500 tracking-[0.25em] uppercase">
-                {projects.length} REPOSITORIES
+                {projects.length} REPOSITORIES BY NOUREDDINE TAHADOUT
               </span>
             </div>
 

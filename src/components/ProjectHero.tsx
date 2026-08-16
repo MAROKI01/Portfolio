@@ -113,7 +113,8 @@ export const ProjectHero: React.FC<ProjectHeroProps> = ({ project }) => {
                   <>
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={`${project.title} - Engineering project created by Noureddine Tahadout`}
+                      decoding="async"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 filter brightness-95 dark:brightness-90 group-hover:brightness-100"
                     />
                     

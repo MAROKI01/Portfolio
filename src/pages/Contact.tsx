@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowUpRight, Mail, Copy, Check, Send, MessageSquare, ShieldCheck } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, WhatsappIcon } from '../components/Icons';
 
+import { SEO } from '../components/SEO';
+
 export const Contact: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState<boolean>(false);
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -69,6 +71,12 @@ export const Contact: React.FC = () => {
 
   return (
     <div className="w-full bg-[#F8F9FA] dark:bg-[#050505] text-[#0F0F12] dark:text-white min-h-screen pt-28 sm:pt-36 pb-24 transition-colors duration-300">
+      <SEO
+        title="Contact Noureddine Tahadout | Software Developer & Creative Designer"
+        description="Get in touch with Noureddine Tahadout via LinkedIn, Email, WhatsApp, or GitHub for software engineering projects, consultations, and collaborations."
+        canonical="https://noureddinetahadout.com/contact"
+      />
+
       {/* Background Graphic & Line Grid */}
       <div className="absolute inset-0 tech-line-grid opacity-15 pointer-events-none" />
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-red-200/30 dark:bg-red-950/20 rounded-full blur-3xl pointer-events-none" />
@@ -89,13 +97,13 @@ export const Contact: React.FC = () => {
         <div className="space-y-4 max-w-3xl">
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
-            <h2 className="font-montserrat font-extrabold text-xs sm:text-sm text-red-700 dark:text-red-500 tracking-[0.25em] uppercase">
+            <span className="font-montserrat font-extrabold text-xs sm:text-sm text-red-700 dark:text-red-500 tracking-[0.25em] uppercase">
               DIRECT CHANNELS
-            </h2>
+            </span>
           </div>
 
           <h1 className="font-montserrat font-black uppercase text-4xl sm:text-5xl lg:text-6xl text-[#0F0F12] dark:text-white tracking-tight leading-none">
-            GET IN TOUCH WITH NOUREDDINE
+            GET IN TOUCH WITH NOUREDDINE TAHADOUT
           </h1>
 
           <p className="font-montserrat text-sm sm:text-base text-neutral-600 dark:text-white/70 leading-relaxed pt-2">

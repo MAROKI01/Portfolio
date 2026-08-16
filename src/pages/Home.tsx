@@ -3,6 +3,7 @@ import { Hero } from '../components/Hero';
 import { CategoryCard } from '../components/CategoryCard';
 import { ProjectCard } from '../components/ProjectCard';
 import { AcademicTimeline } from '../components/AcademicTimeline';
+import { SEO } from '../components/SEO';
 import { PROJECTS } from '../data/projects';
 import { Brain, Database, Sparkles, Cpu, Code2, Terminal, Layers, Network, Server } from 'lucide-react';
 
@@ -29,10 +30,16 @@ export const Home: React.FC = () => {
 
   return (
     <div className="w-full bg-[#F8F9FA] dark:bg-[#050505] text-[#0F0F12] dark:text-white transition-colors duration-300">
+      <SEO
+        title="Noureddine Tahadout | Software Developer & Creative Designer"
+        description="Official portfolio of Noureddine Tahadout, a software developer and creative designer from Morocco. Explore his projects, skills, experience, and creative work."
+        canonical="https://noureddinetahadout.com"
+      />
+
       {/* 1. CINEMATIC HERO */}
       <Hero />
 
-      {/* 2. WHO AM I & ACADEMIC PARCOURS (FIRST SECTION DIRECTLY AFTER HERO) */}
+      {/* 2. ABOUT NOUREDDINE TAHADOUT & ACADEMIC PARCOURS */}
       <section id="about" className="relative w-full bg-white dark:bg-[#0A0A0A] py-20 sm:py-24 lg:py-32 border-t border-black/10 dark:border-white/10 px-6 sm:px-10 lg:px-16 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent opacity-60" />
         <div className="max-w-7xl mx-auto space-y-20 relative z-10">
@@ -41,41 +48,41 @@ export const Home: React.FC = () => {
             <div className="lg:col-span-6 space-y-6">
               <div className="flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
-                <h2 className="font-montserrat font-extrabold text-xs sm:text-sm text-red-700 dark:text-red-500 tracking-[0.25em] uppercase">
+                <span className="font-montserrat font-extrabold text-xs sm:text-sm text-red-700 dark:text-red-500 tracking-[0.25em] uppercase">
                   BIOGRAPHY &amp; PROFILE
-                </h2>
+                </span>
               </div>
-              <h3 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-[#0F0F12] dark:text-white">
-                WHO AM I
-              </h3>
+              <h2 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-[#0F0F12] dark:text-white">
+                ABOUT NOUREDDINE TAHADOUT
+              </h2>
               <p className="font-montserrat text-base sm:text-lg text-neutral-800 dark:text-white/80 leading-relaxed">
-                I am <span className="text-black dark:text-white font-bold">Noureddine Tahadout</span>, a dedicated Software Engineer focused on building high-performance systems, intelligent AI applications, and robust backend architectures.
+                I am <span className="text-black dark:text-white font-bold">Noureddine Tahadout</span>, a software developer and creative designer from Morocco specializing in high-performance software systems, intelligent AI applications, and modern web/mobile technologies.
               </p>
               <p className="font-montserrat text-sm sm:text-base text-neutral-600 dark:text-white/60 leading-relaxed">
-                My work spans low-level C/C++ memory mechanics, real-time socket networking, graphics engine algorithms, and cutting-edge machine learning pipelines with LLMs and computer vision models. I treat engineering as a craft—where architectural clarity, code elegance, and technical performance are non-negotiable.
+                With extensive experience across low-level C/C++ memory mechanics, real-time socket networking, computer vision, and machine learning pipelines, I treat software engineering and design as a cohesive craft—where technical performance, architectural clarity, and visual elegance are non-negotiable.
               </p>
             </div>
 
             <div className="lg:col-span-6 bg-[#F8F9FA] dark:bg-[#050505] border border-black/10 dark:border-white/12 p-8 sm:p-10 border-l-4 border-l-red-600 space-y-6 shadow-md">
-              <div className="font-montserrat font-extrabold text-xs text-red-700 dark:text-red-400 tracking-widest uppercase">
+              <h3 className="font-montserrat font-extrabold text-xs text-red-700 dark:text-red-400 tracking-widest uppercase">
                 ENGINEERING PROFILE
-              </div>
+              </h3>
               <div className="grid grid-cols-2 gap-6 text-xs font-montserrat">
                 <div>
                   <div className="text-neutral-500 dark:text-white/40 uppercase font-semibold">FULL NAME</div>
                   <div className="text-[#0F0F12] dark:text-white font-bold mt-1">Noureddine Tahadout</div>
                 </div>
                 <div>
-                  <div className="text-neutral-500 dark:text-white/40 uppercase font-semibold">PRIMARY FOCUS</div>
-                  <div className="text-[#0F0F12] dark:text-white font-bold mt-1">Systems &amp; AI Engineering</div>
+                  <div className="text-neutral-500 dark:text-white/40 uppercase font-semibold">ROLE</div>
+                  <div className="text-[#0F0F12] dark:text-white font-bold mt-1">Software Developer &amp; Creative Designer</div>
                 </div>
                 <div>
-                  <div className="text-neutral-500 dark:text-white/40 uppercase font-semibold">LANGUAGES</div>
-                  <div className="text-[#0F0F12] dark:text-white font-bold mt-1">C, C++, Python, TypeScript</div>
+                  <div className="text-neutral-500 dark:text-white/40 uppercase font-semibold">LOCATION</div>
+                  <div className="text-[#0F0F12] dark:text-white font-bold mt-1">Morocco</div>
                 </div>
                 <div>
-                  <div className="text-neutral-500 dark:text-white/40 uppercase font-semibold">REPOSITORIES</div>
-                  <div className="text-[#0F0F12] dark:text-white font-bold mt-1">13 Production Repos</div>
+                  <div className="text-neutral-500 dark:text-white/40 uppercase font-semibold">LANGUAGES &amp; STACK</div>
+                  <div className="text-[#0F0F12] dark:text-white font-bold mt-1">C, C++, Python, TypeScript, React</div>
                 </div>
               </div>
 
@@ -91,9 +98,9 @@ export const Home: React.FC = () => {
 
           {/* Areas Grid */}
           <div className="space-y-8 pt-12 border-t border-black/10 dark:border-white/10">
-            <h4 className="font-montserrat font-extrabold text-xl sm:text-2xl text-[#0F0F12] dark:text-white uppercase tracking-tight">
+            <h3 className="font-montserrat font-extrabold text-xl sm:text-2xl text-[#0F0F12] dark:text-white uppercase tracking-tight">
               CORE AREAS OF EXPERTISE
-            </h4>
+            </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {AREAS.map((area, idx) => (
@@ -104,9 +111,9 @@ export const Home: React.FC = () => {
                   <div className="font-mono text-xs text-red-600 dark:text-red-500 font-bold mb-3">
                     0{idx + 1}.
                   </div>
-                  <h5 className="font-montserrat font-bold text-base text-[#0F0F12] dark:text-white uppercase tracking-tight mb-2 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                  <h4 className="font-montserrat font-bold text-base text-[#0F0F12] dark:text-white uppercase tracking-tight mb-2 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
                     {area.title}
-                  </h5>
+                  </h4>
                   <p className="font-montserrat text-xs text-neutral-600 dark:text-white/60 leading-relaxed">
                     {area.desc}
                   </p>
@@ -128,15 +135,15 @@ export const Home: React.FC = () => {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
-              <h2 className="font-montserrat font-extrabold text-xs sm:text-sm text-red-700 dark:text-red-500 tracking-[0.25em] uppercase">
-                ENGINEERING DISCIPLINES
-              </h2>
+              <span className="font-montserrat font-extrabold text-xs sm:text-sm text-red-700 dark:text-red-500 tracking-[0.25em] uppercase">
+                ENGINEERING &amp; DESIGN DISCIPLINES
+              </span>
             </div>
-            <h3 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-[#0F0F12] dark:text-white">
+            <h2 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-[#0F0F12] dark:text-white">
               WHAT I BUILD
-            </h3>
+            </h2>
             <p className="font-montserrat text-sm sm:text-base text-neutral-600 dark:text-white/60 max-w-2xl">
-              Two disciplines. One engineering mindset. Focused on raw execution, low-level precision, and intelligent system design.
+              Two core disciplines created by Noureddine Tahadout. Focused on raw execution, low-level precision, and intelligent system design.
             </p>
           </div>
 
@@ -179,21 +186,22 @@ export const Home: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <span className="w-2 h-2 rounded-full bg-red-600" />
-                <h2 className="font-montserrat font-extrabold text-xs sm:text-sm text-red-700 dark:text-red-500 tracking-[0.25em] uppercase">
+                <span className="font-montserrat font-extrabold text-xs sm:text-sm text-red-700 dark:text-red-500 tracking-[0.25em] uppercase">
                   PORTFOLIO ARCHIVE
-                </h2>
+                </span>
               </div>
-              <h3 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-[#0F0F12] dark:text-white">
+              <h2 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-[#0F0F12] dark:text-white">
                 FEATURED PROJECTS
-              </h3>
+              </h2>
               <p className="font-montserrat text-sm text-neutral-600 dark:text-white/60 max-w-xl">
-                Explore 13 complete engineering repositories spanning C/C++ systems, neural networks, WebSockets, graphics, and mobile apps.
+                Explore 13 complete engineering repositories built by Noureddine Tahadout, spanning C/C++ systems, neural networks, WebSockets, graphics, and mobile apps.
               </p>
             </div>
 
             {/* Filter Buttons */}
             <div className="flex flex-wrap gap-2">
               <button
+                type="button"
                 onClick={() => setFilter('all')}
                 className={`font-montserrat font-semibold text-xs tracking-widest uppercase px-5 py-3 border transition-all cursor-pointer ${
                   filter === 'all'
@@ -205,6 +213,7 @@ export const Home: React.FC = () => {
               </button>
 
               <button
+                type="button"
                 onClick={() => setFilter('ai-data')}
                 className={`font-montserrat font-semibold text-xs tracking-widest uppercase px-5 py-3 border transition-all cursor-pointer ${
                   filter === 'ai-data'
@@ -216,6 +225,7 @@ export const Home: React.FC = () => {
               </button>
 
               <button
+                type="button"
                 onClick={() => setFilter('software-engineering')}
                 className={`font-montserrat font-semibold text-xs tracking-widest uppercase px-5 py-3 border transition-all cursor-pointer ${
                   filter === 'software-engineering'

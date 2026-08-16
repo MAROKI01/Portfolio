@@ -1,0 +1,6 @@
+# Robots.txt for Noureddine Tahadout Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://noureddinetahadout.com/sitemap.xml

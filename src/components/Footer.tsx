@@ -43,17 +43,17 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 font-montserrat text-xs text-neutral-600 dark:text-white/60 tracking-wider uppercase">
               <li>
                 <a href="/#about" className="hover:text-black dark:hover:text-white transition-colors hover:translate-x-1 inline-block">
-                  ABOUT NOUREDDINE
+                  ABOUT NOUREDDINE TAHADOUT
                 </a>
               </li>
               <li>
                 <Link to="/" className="hover:text-black dark:hover:text-white transition-colors hover:translate-x-1 inline-block">
-                  HOME / WORK
+                  PORTFOLIO &amp; WORK
                 </Link>
               </li>
               <li>
                 <Link to="/category/ai-data" className="hover:text-black dark:hover:text-white transition-colors hover:translate-x-1 inline-block">
-                  AI &amp; DATA PROJECTS
+                  AI &amp; DATA ENGINEERING
                 </Link>
               </li>
               <li>
@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/contact" className="hover:text-black dark:hover:text-white transition-colors hover:translate-x-1 inline-block text-red-600 dark:text-red-400 font-bold">
-                  CONTACT ME →
+                  CONTACT NOUREDDINE TAHADOUT →
                 </Link>
               </li>
             </ul>
@@ -79,6 +79,7 @@ export const Footer: React.FC = () => {
                 href="https://www.linkedin.com/in/noureddine-tahadout-7465b51bb/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Connect with Noureddine Tahadout on LinkedIn"
                 className="flex items-center justify-between p-2.5 border border-black/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] hover:border-red-500/50 hover:bg-red-50 dark:hover:bg-red-950/20 text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white transition-all group shadow-sm"
               >
                 <div className="flex items-center gap-2">
@@ -92,6 +93,7 @@ export const Footer: React.FC = () => {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=ntahadout@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Send email to Noureddine Tahadout"
                 className="flex items-center justify-between p-2.5 border border-black/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] hover:border-red-500/50 hover:bg-red-50 dark:hover:bg-red-950/20 text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white transition-all group shadow-sm"
               >
                 <div className="flex items-center gap-2">
@@ -105,6 +107,7 @@ export const Footer: React.FC = () => {
                 href="https://wa.me/212623219055"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Chat with Noureddine Tahadout on WhatsApp"
                 className="flex items-center justify-between p-2.5 border border-black/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] hover:border-red-500/50 hover:bg-red-50 dark:hover:bg-red-950/20 text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white transition-all group shadow-sm"
               >
                 <div className="flex items-center gap-2">
@@ -118,6 +121,7 @@ export const Footer: React.FC = () => {
                 href="https://github.com/MAROKI01"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="View Noureddine Tahadout GitHub profile"
                 className="flex items-center justify-between p-2.5 border border-black/10 dark:border-white/10 bg-white dark:bg-[#0A0A0A] hover:border-red-500/50 hover:bg-red-50 dark:hover:bg-red-950/20 text-neutral-800 dark:text-white/80 hover:text-black dark:hover:text-white transition-all group shadow-sm"
               >
                 <div className="flex items-center gap-2">

@@ -26,8 +26,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           {project.image ? (
             <img
               src={project.image}
-              alt={project.title}
+              alt={`${project.title} - ${project.shortDescription}`}
               loading="lazy"
+              decoding="async"
+              width="800"
+              height="450"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-95 dark:brightness-90 group-hover:brightness-100"
             />
           ) : (

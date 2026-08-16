@@ -99,7 +99,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, imageSr
       >
         <img
           src={imageSrc}
-          alt={title}
+          alt={`${title} - High resolution preview of engineering work by Noureddine Tahadout`}
           className={`transition-all duration-300 rounded border border-white/20 shadow-[0_0_60px_rgba(143,23,38,0.4)] ${
             zoomed 
               ? 'max-w-none w-auto h-auto scale-110 cursor-zoom-out' 

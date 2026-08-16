@@ -84,11 +84,13 @@ export const Hero: React.FC = () => {
             <video
               ref={videoRef}
               src="/video.mp4"
+              poster="/images/cub3d.jpg"
               autoPlay
               muted
               loop
               playsInline
               preload="metadata"
+              aria-hidden="true"
               className="absolute inset-0 w-full h-full object-cover transform-gpu opacity-100"
             />
             {/* Fixed 80% Ambient Base Shade */}
@@ -115,7 +117,9 @@ export const Hero: React.FC = () => {
             <div className="p-1.5 rounded bg-red-100 dark:bg-red-950/60 border border-red-300 dark:border-red-500/40 text-red-700 dark:text-red-400">
               <Cpu className="w-4 h-4" />
             </div>
-            <span>SOFTWARE ENGINEER • AI &amp; DATA</span>
+            <span className="font-bold text-[#0F0F12] dark:text-white tracking-widest">NOUREDDINE TAHADOUT</span>
+            <span className="text-neutral-400 dark:text-white/30">•</span>
+            <span>SOFTWARE DEVELOPER &amp; CREATIVE DESIGNER</span>
           </div>
 
           {/* Toggle Video Button (Low Power / High Performance Mode) */}
@@ -140,6 +144,7 @@ export const Hero: React.FC = () => {
 
         {/* Main Heading */}
         <h1 className="animate-fade-up-delay-1 font-montserrat font-black uppercase leading-[0.9] tracking-[-0.04em] text-[clamp(2.5rem,6.5vw,5.2rem)] text-[#0F0F12] dark:text-white mb-4 sm:mb-6 max-w-5xl">
+          <span className="sr-only">Noureddine Tahadout — Software Developer &amp; Creative Designer</span>
           BUILD.
           <br />
           THINK.
