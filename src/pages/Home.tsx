@@ -33,7 +33,7 @@ export const Home: React.FC = () => {
       <SEO
         title="Noureddine Tahadout | Software Developer & Creative Designer"
         description="Official portfolio of Noureddine Tahadout, a software developer and creative designer from Morocco. Explore his projects, skills, experience, and creative work."
-        canonical="https://noureddinetahadout.com"
+        canonical="https://noureddinetahadout.vercel.app"
       />
 
       {/* 1. CINEMATIC HERO */}

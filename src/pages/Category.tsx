@@ -61,7 +61,7 @@ export const Category: React.FC = () => {
       <SEO
         title={pageTitle}
         description={currentHeader.description}
-        canonical={`https://noureddinetahadout.com/category/${categoryId}`}
+        canonical={`https://noureddinetahadout.vercel.app/category/${categoryId}`}
       />
 
       {/* Category Hero Header */}

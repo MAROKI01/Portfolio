@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://noureddinetahadout.com/sitemap.xml
+Sitemap: https://noureddinetahadout.vercel.app/sitemap.xml

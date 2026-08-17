@@ -74,7 +74,7 @@ export const Contact: React.FC = () => {
       <SEO
         title="Contact Noureddine Tahadout | Software Developer & Creative Designer"
         description="Get in touch with Noureddine Tahadout via LinkedIn, Email, WhatsApp, or GitHub for software engineering projects, consultations, and collaborations."
-        canonical="https://noureddinetahadout.com/contact"
+        canonical="https://noureddinetahadout.vercel.app/contact"
       />
 
       {/* Background Graphic & Line Grid */}

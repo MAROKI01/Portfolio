@@ -42,7 +42,7 @@ export const Project: React.FC = () => {
       <SEO
         title={`${project.title} - ${project.shortDescription} | Noureddine Tahadout`}
         description={project.description.length > 155 ? `${project.description.slice(0, 155)}...` : project.description}
-        canonical={`https://noureddinetahadout.com/project/${project.id}`}
+        canonical={`https://noureddinetahadout.vercel.app/project/${project.id}`}
         ogImage={project.image || "/images/cub3d.jpg"}
       />
 
